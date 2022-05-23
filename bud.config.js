@@ -4,38 +4,43 @@
  * @param {bud} app
  */
 module.exports = async (app) => {
-  app
-    /**
-     * Application entrypoints
-     *
-     * Paths are relative to your resources directory
-     */
-    .entry({
-      app: ['@scripts/app', '@styles/app'],
-      editor: ['@scripts/editor', '@styles/editor'],
-    })
+	app
+		/**
+		 * Application entrypoints
+		 *
+		 * Paths are relative to your resources directory
+		 */
+		.entry({
+			app: ['@scripts/app', '@styles/app'],
+			editor: ['@scripts/editor', '@styles/editor'],
+			admin: ['@scripts/admin', '@styles/wp-admin']
+		})
 
-    /**
-     * These files should be processed as part of the build
-     * even if they are not explicitly imported in application assets.
-     */
-    .assets('images')
+		.provide({
+			jquery: ['jQuery', '$']
+		})
 
-    /**
-     * These files will trigger a full page reload
-     * when modified.
-     */
-    .watch('resources/views/**/*', 'app/**/*')
+		/**
+		 * These files should be processed as part of the build
+		 * even if they are not explicitly imported in application assets.
+		 */
+		.assets('images')
 
-    /**
-     * Target URL to be proxied by the dev server.
-     *
-     * This should be the URL you use to visit your local development server.
-     */
-    .proxy('http://example.test')
+		/**
+		 * These files will trigger a full page reload
+		 * when modified.
+		 */
+		.watch('resources/views/**/*', 'app/**/*')
 
-    /**
-     * Development URL to be used in the browser.
-     */
-    .serve('http://0.0.0.0:3000');
+		/**
+		 * Target URL to be proxied by the dev server.
+		 *
+		 * This should be the URL you use to visit your local development server.
+		 */
+		.proxy('http://example.test')
+
+		/**
+		 * Development URL to be used in the browser.
+		 */
+		.serve('http://0.0.0.0:3000');
 };
