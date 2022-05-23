@@ -5,3 +5,5 @@
 .budfiles
 npm-debug.log
 yarn-error.log
+*.sublime-project
+*.sublime-workspace
