@@ -1,5 +1,5 @@
 {
-  "name": "clarify/wp-start-theme",
+  "name": "clarifynl/wp-start-theme",
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "WordPress starter theme with a modern development workflow",
@@ -35,7 +35,7 @@
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/clarify/wp-start-theme/issues",
+    "issues": "https://github.com/clarifynl/wp-start-theme/issues",
     "forum": "https://discourse.roots.io/"
   },
   "autoload": {
