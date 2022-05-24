@@ -1,8 +1,8 @@
 <?php
 
 namespace App\View\Composers;
-
 use Roots\Acorn\View\Composer;
+use function Roots\asset;
 
 class App extends Composer
 {
@@ -12,7 +12,7 @@ class App extends Composer
 	 * @var array
 	 */
 	protected static $views = [
-		'*',
+		'*'
 	];
 
 	/**
@@ -20,20 +20,24 @@ class App extends Composer
 	 *
 	 * @return array
 	 */
-	public function with()
-	{
+	public function with() {
 		return [
-			'siteName' => $this->siteName(),
+			'siteInfo' => $this->siteInfo()
 		];
 	}
 
 	/**
-	 * Returns the site name.
+	 * Returns site info
 	 *
-	 * @return string
+	 * @return array
 	 */
-	public function siteName()
-	{
-		return get_bloginfo('name', 'display');
+	public function siteInfo() {
+		return (object) [
+			'siteName'    => get_bloginfo('name', 'display'),
+			'siteDesc'    => get_bloginfo('description'),
+			'homeUrl'     => home_url('/'),
+			'siteLogo'    => asset('images/qwic-logo.svg')->contents(),
+			'siteIcon'    => asset('images/qwic-icon.svg')->contents()
+		];
 	}
 }
