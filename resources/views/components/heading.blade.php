@@ -1,0 +1,1 @@
+<h{!! $level !!} {{ $attributes->merge(['class' => $styles]) }}>{!! $slot !!}</h{!! $level !!}>
