@@ -97,6 +97,6 @@ class Admin
 	 * Style WP Admin
 	 */
 	public static function admin_enqueue_scripts() {
-		// bundle('admin')->enqueue();
+		bundle('wp-admin')->enqueue();
 	}
 }

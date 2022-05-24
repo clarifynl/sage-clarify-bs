@@ -84,10 +84,11 @@ Make sure that you have [Acorn installed](https://docs.roots.io/acorn/2.x/instal
 ```sh
 themes/your-theme-name/   # → Root of your Sage based theme
 ├── app/                  # → Theme PHP
-│   ├── Providers/        # → Service providers
-│   ├── View/             # → View models
-│   ├── filters.php       # → Theme filters
-│   └── setup.php         # → Theme setup
+│   ├── Providers/       # → Service providers
+│   ├── View/            # → View models
+│   ├── helpers.php      # → Theme helper functions
+│   ├── Hooks.php        # → Wordpress Hooks class
+│   └── setup.php        # → Theme setup
 ├── composer.json         # → Autoloading for `app/` files
 ├── public/               # → Built theme assets (never edit)
 ├── functions.php         # → Theme bootloader
