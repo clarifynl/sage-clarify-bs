@@ -5,6 +5,44 @@ use function Roots\bundle;
 
 class Admin
 {
+	/**
+	 * Remove the default post type from menu
+	 */
+	public static function remove_default_post_type() {
+		remove_menu_page('edit.php');
+	}
+
+	/**
+	 * Remove the default post type from menu bar
+	 */
+	public static function remove_default_post_type_menu_bar($wp_admin_bar) {
+		$wp_admin_bar->remove_node('new-post');
+	}
+
+	/**
+	 * Remove the comments tab from menu bar
+	 */
+	public static function remove_comments_menu_bar() {
+		remove_menu_page('edit-comments.php');
+	}
+
+	/**
+	 * Remove the new post link in Admin Bar
+	 */
+	public static function remove_add_new_post_href_in_admin_bar() {
+		?>
+		<script type="text/javascript">
+			function remove_add_new_post_href_in_admin_bar() {
+				var add_new = document.getElementById('wp-admin-bar-new-content');
+				if(!add_new) return;
+				var add_new_a = add_new.getElementsByTagName('a')[0];
+				if(add_new_a) add_new_a.setAttribute('href','#!');
+			}
+			remove_add_new_post_href_in_admin_bar();
+		</script>
+		<?php
+	}
+
 	/*
 	 * Format oEmbed field value
 	 */
