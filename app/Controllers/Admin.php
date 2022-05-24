@@ -47,6 +47,7 @@ class Admin
 	 */
 	public static function add_gtag_script() {
 		$gtag_id = isset($_SERVER['GTAG_ID']) ? $_SERVER['GTAG_ID'] : null;
+
 		if ($gtag_id) {
 			if ((!defined('WP_ENV') || \WP_ENV === 'production') &&
 				!current_user_can('manage_options')) { ?>
@@ -66,7 +67,7 @@ class Admin
 	/*
 	 * Add Google Tag Manager noscript tag directly after body
 	 */
-	public static function wpBodyOpen() {
+	public static function add_gtag_noscript() {
 		if (env('GTAG_ID') && (!defined('WP_ENV') || \WP_ENV === 'production') && !current_user_can('manage_options')) {
 			echo '<noscript><iframe sandbox src="https://www.googletagmanager.com/ns.html?id='. env('GTAG_ID') .'" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
 		}

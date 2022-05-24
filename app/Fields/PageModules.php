@@ -13,7 +13,6 @@ class PageModules extends Field
 	 * @return array
 	 */
 	public function fields() {
-		$product = new \WC_Product( get_the_ID() );
 		$post = new FieldsBuilder('page_modules');
 		$post
 			->setLocation('page_type', '==', 'front_page')

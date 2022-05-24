@@ -42,7 +42,8 @@ class Carousel extends Partial
 						'label'        => 'CTA Label',
 						'instructions' => 'Enter the CTA label'
 					])
-				->endGroup();
+				->endGroup()
+			->endGroup();
 
 		return $module;
 	}
