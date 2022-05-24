@@ -120,6 +120,10 @@ Edit `app/setup.php` to enable or disable theme features, setup navigation menus
 - Run `yarn` from the theme directory to install dependencies
 - Update `bud.config.js` with your local dev URL
 
+## Theme update
+
+- Run `git fetch upstream` from the theme directory to update this start theme with it's upstream repository from `roots/sage`.
+
 ### Build commands
 
 - `yarn dev` — Compile assets when file changes are made, start Browsersync session
