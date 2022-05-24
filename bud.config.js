@@ -13,7 +13,7 @@ module.exports = async (app) => {
 		.entry({
 			app: ['@scripts/app', '@styles/app'],
 			editor: ['@scripts/editor', '@styles/editor'],
-			admin: ['@scripts/admin', '@styles/wp-admin']
+			admin: ['@styles/wp-admin']
 		})
 
 		.provide({
