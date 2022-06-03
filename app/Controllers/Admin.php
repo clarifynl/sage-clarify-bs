@@ -138,4 +138,15 @@ class Admin
 	public static function admin_enqueue_scripts() {
 		bundle('admin')->enqueue();
 	}
+
+	/*
+	 * Automatically wrap paragraphs in p tags
+	 */
+	public static function add_p_tags($init, $editor_id = '') {
+		$init['wpautop'] = false;
+		$init['indent'] = true;
+		$init['tadv_noautop'] = true;
+
+		return $init;
+	}
 }

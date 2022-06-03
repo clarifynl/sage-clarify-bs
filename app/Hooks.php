@@ -29,6 +29,7 @@ class Hooks
 		add_filter('jpeg_quality',                                 ['App\Controllers\Admin', 'set_jpeg_quality'], 10, 2);
 		add_filter('upload_mimes',                                 ['App\Controllers\Admin', 'set_upload_mimes'], 10, 1);
 		add_filter('excerpt_length',                               ['App\Controllers\Admin', 'set_excerpt_length'], 999);
+		add_filter('tiny_mce_before_init',                         ['App\Controllers\Admin', 'add_p_tags']);
 	}
 
 	private function add_actions_frontend() {
