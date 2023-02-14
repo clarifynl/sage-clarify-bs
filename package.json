@@ -1,5 +1,5 @@
 {
-	"name": "clarify",
+	"name": "roots-clarify-tw",
 	"private": true,
 	"browserslist": [
 		"extends @wordpress/browserslist-config"
