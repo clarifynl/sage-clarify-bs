@@ -26,7 +26,8 @@
     "@roots/bud-eslint": "6.9.1",
     "@roots/bud-sass": "6.9.1",
     "@roots/bud-stylelint": "6.9.1",
-    "@roots/sage": "6.9.1"
+    "@roots/sage": "6.9.1",
+    "stylelint-scss": "^4.4.0"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",

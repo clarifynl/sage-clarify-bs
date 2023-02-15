@@ -1,5 +1,12 @@
 module.exports = {
-	extends: ['@roots/sage/stylelint-config'],
+	customSyntax: 'postcss-scss',
+	extends: [
+		'@roots/sage/stylelint-config',
+		'@roots/bud-sass/stylelint-config'
+	],
+	plugins: [
+		'stylelint-scss'
+	],
 	rules: {
 		'color-no-invalid-hex': true,
 		'indentation': 'tab',
