@@ -44,12 +44,12 @@ class Hooks
 	}
 
 	private function add_actions_backend() {
-		add_action('acf/init',                                      ['App\Controllers\Acf', 'init_options_page']);
+		add_action('acf/init',                                      ['App\Controllers\Acf',   'init_options_page']);
 		add_action('admin_enqueue_scripts',                         ['App\Controllers\Admin', 'admin_enqueue_scripts']);
 		add_action('admin_menu',                                    ['App\Controllers\Admin', 'remove_default_post_type']);
 		add_action('admin_bar_menu',                                ['App\Controllers\Admin', 'remove_default_post_type_menu_bar'], 999, 1);
 		add_action('admin_menu',                                    ['App\Controllers\Admin', 'remove_comments_menu_bar']);
-		add_action('admin_footer',                                  ['App\Controllers\Admin', 'remove_add_new_post_href_in_admin_bar']);
+		add_action('admin_footer',                                  ['App\Controllers\Admin', 'remove_add_new_post_admin_bar']);
 	}
 
 	private function remove_actions_backend() {
