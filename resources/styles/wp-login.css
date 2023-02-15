@@ -3,139 +3,139 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    font-size: clamp(
-      14px,
-      1.5vw,
-      18px
-    );
+	html {
+		font-size: clamp(
+			14px,
+			1.5vw,
+			18px
+		);
 
-    @apply h-full;
-  }
+		@apply h-full;
+	}
 
-  .wp-core-ui {
-    .button {
-      @apply
-        !px-[20px]
-        !py-[12px]
-        !text-base
-        !leading-normal;
-    }
-  }
+	.wp-core-ui {
+		.button {
+			@apply
+				!px-[20px]
+				!py-[12px]
+				!text-base
+				!leading-normal;
+		}
+	}
 
-  body.login {
-    @apply
-      flex
-      flex-col
-      font-sans
-      text-black
-      bg-white;
+	body.login {
+		@apply
+			flex
+			flex-col
+			font-sans
+			text-black
+			bg-white;
 
-    h1 {
-      a {
-        @apply
-          w-full
-          bg-logo
-          bg-contain
-          bg-right
-          bg-no-repeat;
-      }
-    }
+		h1 {
+			a {
+				@apply
+					w-full
+					bg-logo
+					bg-contain
+					bg-right
+					bg-no-repeat;
+			}
+		}
 
-    .message {
-      @apply
-        p-3
-        border-l-0
-        text-sm
-        text-white
-        bg-blue-700
-        shadow-none;
-    }
+		.message {
+			@apply
+				p-3
+				border-l-0
+				text-sm
+				text-white
+				bg-blue-700
+				shadow-none;
+		}
 
-    .success {
-      @apply
-        bg-green-600;
-    }
+		.success {
+			@apply
+				bg-green-600;
+		}
 
-    #login_error {
-      @apply
-        p-3
-        border-l-0
-        text-sm
-        text-white
-        bg-red-600;
-    }
+		#login_error {
+			@apply
+				p-3
+				border-l-0
+				text-sm
+				text-white
+				bg-red-600;
+		}
 
-    #loginform {
-      @apply
-        flex
-        flex-col
-        px-0
-        bg-transparent
-        border-none
-        overflow-visible
-        shadow-none;
+		#loginform {
+			@apply
+				flex
+				flex-col
+				px-0
+				bg-transparent
+				border-none
+				overflow-visible
+				shadow-none;
 
-      label {
-        @apply mb-2;
-      }
-    }
+			label {
+				@apply mb-2;
+			}
+		}
 
-    .forgetmenot {
-      label {
-        @apply
-          !mb-0
-          ml-2;
-      }
-    }
+		.forgetmenot {
+			label {
+				@apply
+					!mb-0
+					ml-2;
+			}
+		}
 
-    #nav,
-    #backtoblog,
-    .privacy-policy-page-link {
-      @apply
-        m-0
-        mb-2
-        p-0
-        text-center;
+		#nav,
+		#backtoblog,
+		.privacy-policy-page-link {
+			@apply
+				m-0
+				mb-2
+				p-0
+				text-center;
 
-      a {
-        @apply
-          text-center
-          text-white
-          transition-colors
-          hover:text-blue-700
-          focus:text-blue-700;
-      }
-    }
-  }
+			a {
+				@apply
+					text-center
+					text-white
+					transition-colors
+					hover:text-blue-700
+					focus:text-blue-700;
+			}
+		}
+	}
 
-  #login {
-    @apply
-      p-0
-      text-white;
-  }
+	#login {
+		@apply
+			p-0
+			text-white;
+	}
 
-  #wpml-login-ls-form {
-    @apply
-      w-[320px]
-      flex
-      flex-row
-      items-center
-      justify-center;
+	#wpml-login-ls-form {
+		@apply
+			w-[320px]
+			flex
+			flex-row
+			items-center
+			justify-center;
 
-    label {
-      @apply m-0;
-    }
+		label {
+			@apply m-0;
+		}
 
-    select {
-      @apply mx-4;
-    }
+		select {
+			@apply mx-4;
+		}
 
-    .button {
-      @apply
-        !text-sm
-        !px-[12px]
-        !py-[8px];
-    }
-  }
+		.button {
+			@apply
+				!text-sm
+				!px-[12px]
+				!py-[8px];
+		}
+	}
 }
