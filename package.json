@@ -27,5 +27,11 @@
     "@roots/eslint-config": "6.9.0",
     "@roots/sage": "6.9.0",
     "eslint-config-clarify": "github:clarifynl/eslint-config-clarify"
+  },
+  "dependencies": {
+    "caniuse-lite": "^1.0",
+    "lazysizes": "^5.3",
+    "swiper": "^9.0",
+    "tw-elements": "^1.0.0-alpha13"
   }
 }

@@ -1,10 +1,20 @@
 // https://tailwindcss.com/docs/configuration
 module.exports = {
-  content: ['./index.php', './app/**/*.php', './resources/**/*.{php,vue,js}'],
+  content: [
+    "./index.php",
+    "./app/**/*.php",
+    "./resources/!(icons)/**/*.{php,vue,js}",
+    "./node_modules/tw-elements/dist/js/**/*.js"
+  ],
   theme: {
     extend: {
-      colors: {}, // Extend Tailwind's default colors
-    },
+      colors: {},
+      backgroundImage: {
+        'logo': "url('@images/logo-placeholder.svg')"
+      }
+    }
   },
-  plugins: [],
+  plugins: [
+    require("tw-elements/dist/plugin")
+  ]
 };
