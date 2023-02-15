@@ -62,7 +62,7 @@ new Hooks();
 |
 */
 
-collect(['setup'])
+collect(['setup', 'helpers'])
     ->each(function ($file) {
         if (! locate_template($file = "app/{$file}.php", true, true)) {
             wp_die(
