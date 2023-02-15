@@ -1,0 +1,79 @@
+html {
+	font-size: clamp(
+		14px,
+		1.5vw,
+		18px
+	);
+}
+
+.wp-core-ui {
+	.button {
+		/* add */
+	}
+}
+
+body.login {
+	/* add */
+
+	h1 {
+		a {
+			/* add */
+		}
+	}
+
+	.message {
+		/* add */
+	}
+
+	.success {
+		/* add */
+	}
+
+	#login_error {
+		/* add */
+	}
+
+	#loginform {
+		/* add */
+
+		label {
+			/* add */
+		}
+	}
+
+	.forgetmenot {
+		label {
+			/* add */
+		}
+	}
+
+	#nav,
+	#backtoblog,
+	.privacy-policy-page-link {
+		/* add */
+
+		a {
+			/* add */
+		}
+	}
+}
+
+#login {
+	/* add */
+}
+
+#wpml-login-ls-form {
+	/* add */
+
+	label {
+		margin: 0;
+	}
+
+	select {
+		margin: 0 1rem;
+	}
+
+	.button {
+		/* add */
+	}
+}

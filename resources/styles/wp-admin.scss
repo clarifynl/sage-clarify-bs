@@ -1,0 +1,15 @@
+body.wp-admin {
+	#wpadminbar {
+		/* add */
+
+		#wp-admin-bar-wp-logo {
+			/* add */
+		}
+
+		#wp-admin-bar-site-name {
+			> .ab-item {
+				/* add */
+			}
+		}
+	}
+}

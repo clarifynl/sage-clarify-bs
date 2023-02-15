@@ -1,3 +1,28 @@
+import path from 'path';
+import glob from 'glob';
+
+String.prototype.toKebabCase = function () {
+  return this.match(
+    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
+  ).join('-');
+};
+
+/**
+ * Get list of entrypoints for blocks
+ */
+const blockFiles = {};
+
+glob.sync('app/Blocks/**/*.php').map(block => {
+  const name  = path.basename(block, '.php').toKebabCase().toLowerCase();
+  const files = glob.sync(`resources/views/blocks/${name}/*.{js,css}`);
+
+  if (files?.length > 0) {
+    const filesResult = files.map(file => file.replace(/resources\/views\/blocks/g, '@blocks'));
+
+    blockFiles[name] = filesResult;
+  }
+});
+
 /**
  * Build configuration
  *
@@ -17,7 +42,8 @@ export default async (app) => {
       app: ['@scripts/app', '@styles/app'],
       editor: ['@scripts/editor', '@styles/editor'],
       admin: ['@styles/wp-admin'],
-      login: ['@styles/wp-login']
+      login: ['@styles/wp-login'],
+      ...blockFiles
     })
 
     /**
@@ -83,8 +109,5 @@ export default async (app) => {
         customFontSize: false,
       },
     })
-    .useTailwindColors()
-    .useTailwindFontFamily()
-    .useTailwindFontSize()
     .enable();
 };
