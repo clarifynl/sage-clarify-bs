@@ -7,7 +7,6 @@
   "engines": {
     "node": ">=16.0.0"
   },
-  "type": "module",
   "scripts": {
     "dev": "bud dev",
     "build": "bud build",
