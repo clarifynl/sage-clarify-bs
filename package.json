@@ -29,7 +29,7 @@
     "eslint-config-clarify": "github:clarifynl/eslint-config-clarify"
   },
   "dependencies": {
-    "caniuse-lite": "^1.0",
+    "caniuse-lite": "^1.0.30001452",
     "lazysizes": "^5.3",
     "swiper": "^9.0",
     "tw-elements": "^1.0.0-alpha13"
