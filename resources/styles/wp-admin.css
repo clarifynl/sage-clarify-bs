@@ -1,3 +1,32 @@
 body.wp-admin {
-  /* ... */
+  #wpadminbar {
+    @apply
+      font-sans
+      bg-blue-900;
+
+    #wp-admin-bar-wp-logo {
+      @apply hidden;
+    }
+
+    #wp-admin-bar-site-name {
+      > .ab-item {
+        @apply
+          relative
+          block
+          p-0
+          my-0
+          mx-2
+          w-[80px]
+          text-white
+          font-sans
+          indent-[-9999px]
+          overflow-hidden
+          bg-logo
+          bg-left
+          bg-no-repeat
+          bg-[length:auto_18px]
+          before:hidden;
+      }
+    }
+  }
 }
