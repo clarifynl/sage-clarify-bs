@@ -16,7 +16,8 @@ export default async (app) => {
     .entry({
       app: ['@scripts/app', '@styles/app'],
       editor: ['@scripts/editor', '@styles/editor'],
-      admin: ['@styles/wp-admin']
+      admin: ['@styles/wp-admin'],
+      login: ['@styles/wp-login']
     })
 
     /**

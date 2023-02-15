@@ -29,7 +29,7 @@ class Admin
 	/**
 	 * Remove the new post link in Admin Bar
 	 */
-	public static function remove_add_new_post_href_in_admin_bar() {
+	public static function remove_add_new_post_admin_bar() {
 		?>
 		<script type="text/javascript">
 			function remove_add_new_post_href_in_admin_bar() {
@@ -115,7 +115,7 @@ class Admin
 	 * Style WP Login
 	 */
 	public static function login_enqueue_scripts() {
-		// bundle('login')->enqueue();
+		bundle('login')->enqueue();
 	}
 
 	/**
