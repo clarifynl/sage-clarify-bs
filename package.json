@@ -1,33 +1,31 @@
 {
-	"name": "roots-clarify-tw",
-	"private": true,
-	"browserslist": [
-		"extends @wordpress/browserslist-config"
-	],
-	"engines": {
-		"node": ">=16.0.0"
-	},
-	"scripts": {
-		"dev": "bud dev",
-		"build": "bud build",
-		"translate": "yarn translate:pot && yarn translate:update",
-		"translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"app,resources\"",
-		"translate:update": "for filename in ./resources/lang/*.po; do msgmerge -U $filename ./resources/lang/sage.pot; done; rm -f ./resources/lang/*.po~",
-		"translate:compile": "yarn translate:mo && yarn translate:js",
-		"translate:js": "wp i18n make-json ./resources/lang --pretty-print",
-		"translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
-	},
-	"devDependencies": {
-		"@babel/eslint-parser": "^7.16.5",
-		"@roots/bud": "5.7.7",
-		"@roots/bud-eslint": "5.7.7",
-		"@roots/bud-stylelint": "5.7.7",
-		"@roots/bud-tailwindcss": "5.7.7",
-		"@roots/eslint-config": "5.7.7",
-		"@roots/sage": "5.7.7",
-		"eslint-config-airbnb": "^19.0.4",
-		"eslint-config-prettier": "^8.3.0",
-		"eslint-plugin-jsx-a11y": "^6.5.1",
-		"eslint-config-clarify": "github:clarifynl/eslint-config-clarify"
-	}
+  "name": "roots-clarify-tw",
+  "private": true,
+  "browserslist": [
+    "extends @roots/browserslist-config"
+  ],
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "bud dev",
+    "build": "bud build",
+    "translate": "yarn translate:pot && yarn translate:update",
+    "translate:pot": "wp i18n make-pot . ./resources/lang/sage.pot --include=\"app,resources\"",
+    "translate:update": "for filename in ./resources/lang/*.po; do msgmerge -U $filename ./resources/lang/sage.pot; done; rm -f ./resources/lang/*.po~",
+    "translate:compile": "yarn translate:mo && yarn translate:js",
+    "translate:js": "wp i18n make-json ./resources/lang --pretty-print",
+    "translate:mo": "wp i18n make-mo ./resources/lang ./resources/lang"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.19",
+    "@roots/bud": "6.9.0",
+    "@roots/bud-eslint": "6.9.0",
+    "@roots/bud-stylelint": "6.9.0",
+    "@roots/bud-tailwindcss": "6.9.0",
+    "@roots/eslint-config": "6.9.0",
+    "@roots/sage": "6.9.0",
+    "eslint-config-clarify": "github:clarifynl/eslint-config-clarify"
+  }
 }
