@@ -66,13 +66,13 @@ Install Sage using Composer from your WordPress themes directory (replace `your-
 
 ```sh
 # @ app/themes/ or wp-content/themes/
-$ composer create-project clarifynl/sage-clarify-tw your-theme-name
+$ composer create-project clarifynl/sage-clarify-bs your-theme-name
 ```
 
 To install the latest development version of Sage, add `dev-main` to the end of the command:
 
 ```sh
-$ composer create-project clarifynl/sage-clarify-tw your-theme-name dev-main
+$ composer create-project clarifynl/sage-clarify-bs your-theme-name dev-main
 ```
 
 Make sure that you have [Acorn installed](https://docs.roots.io/acorn/2.x/installation/).
