@@ -49,23 +49,6 @@ return [
 				'title' => [
 					'title' => __('Title')
 				],
-				'start_date' => [
-					'title'    => __('Start datum', 'sage'),
-					'function' => function() {
-						global $post;
-						$start_date = get_field('event_details_start_date', $post->ID);
-						echo $start_date;
-					},
-					'default'  => 'DESC'
-				],
-				'end_date' => [
-					'title'    => __('Eind datum', 'sage'),
-					'function' => function() {
-						global $post;
-						$end_date = get_field('event_details_end_date', $post->ID);
-						echo $end_date;
-					}
-				],
 				'date',
 				'author'
 			]
