@@ -22,17 +22,16 @@
     "@babel/eslint-parser": "^7.19",
     "@clarifynl/eslint-config-clarify": "^0.0.7",
     "@clarifynl/prettier-config-clarify": "^0.0.6",
+    "@clarifynl/stylelint-config-clarify": "^0.0.8",
     "@roots/bud": "6.9.1",
     "@roots/bud-eslint": "6.9.1",
     "@roots/bud-sass": "6.9.1",
     "@roots/bud-stylelint": "6.9.1",
-    "@roots/sage": "6.9.1",
-    "stylelint-scss": "^4.4.0"
+    "@roots/sage": "6.9.1"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "bootstrap": "5.3.0-alpha1",
-    "caniuse-lite": "^1.0.30001452",
     "lazysizes": "^5.3",
     "swiper": "^9.0"
   }
