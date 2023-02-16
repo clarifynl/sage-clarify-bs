@@ -5,7 +5,7 @@ use Log1x\AcfComposer\Partial;
 use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\ImageJson;
 
-class MediaText extends Partial
+class MediaTextBlock extends Partial
 {
 	/**
 	 * The partial field group.

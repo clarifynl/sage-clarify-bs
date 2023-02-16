@@ -2,10 +2,10 @@
 	<header class="entry-header col-span-6 sm:col-span-2">
 		<h1 class="entry-title font-serif text-2xl font-bold mx-4 sm:mx-8 mb-16">{!! $title !!}</h1>
 		@if (isset($image))
-			{!! ResponsivePics::get_image($fimage, 'xs-4', null, true) !!}
+			{!! ResponsivePics::get_image($image, 'xs-4', null, true) !!}
 		@endif
 	</header>
 	<div class="entry-content col-span-6 mx-4 sm:col-span-3 sm:mx-8">
-		@php(the_content())
+		{!! $content !!}
 	</div>
 </article>

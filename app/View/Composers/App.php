@@ -22,11 +22,10 @@ class App extends Composer
 	 */
 	public function with() {
 		return [
-			'site_name'    => get_bloginfo('name', 'display'),
-			'site_desc'    => get_bloginfo('description'),
-			'home_url'     => home_url('/'),
-			'site_logo'    => asset('images/qwic-logo.svg')->contents(),
-			'site_icon'    => asset('images/qwic-icon.svg')->contents()
+			'site_name' => get_bloginfo('name', 'display'),
+			'site_desc' => get_bloginfo('description'),
+			'home_url'  => home_url('/'),
+			'site_logo' => asset('images/logo-placeholder.svg')->contents()
 		];
 	}
 }

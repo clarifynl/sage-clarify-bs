@@ -3,9 +3,10 @@
 namespace App\Blocks;
 use Log1x\AcfComposer\Block;
 use StoutLogic\AcfBuilder\FieldsBuilder;
-use App\Fields\Partials\MediaText;
+use App\Fields\Partials\MediaTextBlock;
+use function Roots\bundle;
 
-class MediaTextBlock extends Block
+class MediaText extends Block
 {
 	/**
 	 * The block name.
@@ -47,7 +48,7 @@ class MediaTextBlock extends Block
 	 *
 	 * @var string|array
 	 */
-	public $icon = 'align-pull-right';
+	public $icon = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false"><path d="M3 18h8V6H3v12zM14 7.5V9h7V7.5h-7zm0 5.3h7v-1.5h-7v1.5zm0 3.7h7V15h-7v1.5z"></path></svg>';
 
 	/**
 	 * The block keywords.
@@ -104,7 +105,7 @@ class MediaTextBlock extends Block
 	public function fields()
 	{
 		$block = new FieldsBuilder('media_text_block');
-		$block->addFields($this->get(MediaText::class));
+		$block->addFields($this->get(MediaTextBlock::class));
 
 		return $block->build();
 	}

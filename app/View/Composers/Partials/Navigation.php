@@ -1,6 +1,6 @@
 <?php
 
-namespace App\View\Composers;
+namespace App\View\Composers\Partials;
 use Roots\Acorn\View\Composer;
 use Log1x\Navi\Navi;
 
@@ -12,7 +12,7 @@ class Navigation extends Composer
 	 * @var array
 	 */
 	protected static $views = [
-		'partials.navigation'
+		'partials.navigation*'
 	];
 
 	/**
@@ -29,7 +29,7 @@ class Navigation extends Composer
 	/**
 	 * Returns the primary navigation.
 	 *
-	 * @return array
+	 * @return object
 	 */
 	public function navigation() {
 		$menu = $this->data['nav_menu'] ?: 'main_menu';
