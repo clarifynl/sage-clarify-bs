@@ -30,6 +30,8 @@
     "@roots/sage": "6.9.1"
   },
   "dependencies": {
+    "@lottiefiles/lottie-interactivity": "^1.5",
+    "@lottiefiles/lottie-player": "^1.5",
     "@popperjs/core": "^2.11.6",
     "bootstrap": "5.3.0-alpha1",
     "lazysizes": "^5.3",
