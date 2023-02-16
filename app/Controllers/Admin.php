@@ -43,7 +43,7 @@ class Admin
 		<?php
 	}
 
-	/*
+	/**
 	 * Format oEmbed field value
 	 */
 	public static function format_oembed_value($html, $data, $url) {
@@ -53,14 +53,14 @@ class Admin
 		return $lazyload;
 	}
 
-	/*
+	/**
 	 * Set preview link to headless front-end
 	 */
 	public static function set_jpeg_quality($quality, $context) {
 		return 90;
 	}
 
-	/*
+	/**
 	 * Add allowed mime types for uploads
 	 */
 	public static function set_upload_mimes($mimes) {
@@ -102,13 +102,22 @@ class Admin
 		}
 	}
 
-	/*
+	/**
 	 * Add Google Tag Manager noscript tag directly after body
 	 */
 	public static function add_gtag_noscript() {
 		if (env('GTAG_ID') && (!defined('WP_ENV') || \WP_ENV === 'production') && !current_user_can('manage_options')) {
 			echo '<noscript><iframe sandbox src="https://www.googletagmanager.com/ns.html?id='. env('GTAG_ID') .'" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
 		}
+	}
+
+	/**
+	 * Remove default Gutenberg block-library styles
+	 */
+	public static function remove_block_library_styles(){
+		wp_dequeue_style('wp-block-library');
+		wp_dequeue_style('wp-block-library-theme');
+		wp_dequeue_style('wc-blocks-style');
 	}
 
 	/**

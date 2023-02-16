@@ -36,6 +36,7 @@ class Hooks
 		add_action('wp_head',                                      ['App\Controllers\Admin', 'add_gtag_script']);
 		add_action('wp_body_open',                                 ['App\Controllers\Admin', 'add_gtag_noscript'], 10, 0);
 		add_action('login_enqueue_scripts',                        ['App\Controllers\Admin', 'login_enqueue_scripts'], 10, 0);
+		add_action('wp_enqueue_scripts',                           ['App\Controllers\Admin', 'remove_block_library_styles'], 100, 0);
 	}
 
 	private function remove_actions_frontend() {
