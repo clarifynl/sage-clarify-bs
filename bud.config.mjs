@@ -14,7 +14,7 @@ const blockFiles = {};
 
 glob.sync('app/Blocks/**/*.php').map(block => {
   const name  = path.basename(block, '.php').toKebabCase().toLowerCase();
-  const files = glob.sync(`resources/views/blocks/${name}/*.{js,css}`);
+  const files = glob.sync(`resources/views/blocks/${name}/*.{js,scss}`);
 
   if (files?.length > 0) {
     const filesResult = files.map(file => file.replace(/resources\/views\/blocks/g, '@blocks'));
@@ -38,6 +38,7 @@ export default async (app) => {
    * @see {@link https://bud.js.org/docs/bud.entry/}
    */
   app
+    .alias('@blocks', app.path('@src/views/blocks'))
     .entry({
       app: ['@scripts/app', '@styles/app'],
       editor: ['@scripts/editor', '@styles/editor'],
