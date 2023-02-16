@@ -1,19 +1,17 @@
-@isset ($media_text)
-	<section class="{{ isset($block) ? $block->classes : '' }}">
-		<div class="">
+@isset ($media_text, $block)
+	<section class="{{ $block->classes }}">
+		<div class="{{ $block->classes }}__wrapper">
 			<figure
-				class="
-					{!! ($media_text->align === 'left') ? ' md:order-1' : ' md:order-2 xl:col-start-8 ' !!}
-					{!! (!isset($media_text->image_json) && $block->preview) ? ' border border-neutral-100' : '' !!}
+				class="{{ $block->classes }}__media
+					align-{!! $media_text->align !!}
+					{!! (!isset($media_text->image_json) && $block->preview) ? 'select-image' : '' !!}
 				">
 				@includeWhen(isset($media_text->image_json), 'partials.image-json', [
 					'image_json' => $media_text->image_json
 				])
 			</figure>
 			<article
-				class="
-					{!! ($media_text->align === 'left') ? ' xl:col-start-7 md:order-2' : ' md:order-1' !!}
-				">
+				class="{{ $block->classes }}__text align-{!! $media_text->align !!}">
 				@includeWhen(isset($media_text->text), 'partials.text', ['text' => $media_text->text])
 			</article>
 		</div>

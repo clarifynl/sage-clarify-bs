@@ -1,3 +1,69 @@
 .wp-block-media-text {
-	/* add styles */
+	@extend %wp-block;
+
+	&__wrapper {
+		@extend %wp-block-wrapper;
+	}
+
+	&__media {
+		grid-column: span 12 / span 12;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		@include media-breakpoint-up(md) {
+			grid-column: span 6 / span 6;
+		}
+
+		@include media-breakpoint-up(xl) {
+			grid-column: span 5 / span 5;
+		}
+
+		&.align-left {
+			@include media-breakpoint-up(md) {
+				order: 1;
+			}
+		}
+
+		&.align-right {
+			@include media-breakpoint-up(md) {
+				order: 2;
+			}
+
+			@include media-breakpoint-up(xl) {
+				grid-column-start: 8;
+			}
+		}
+
+		&.select-image {
+			border: $border-width solid $primary;
+		}
+	}
+
+	&__text {
+		grid-column: span 12 / span 12;
+		display: flex;
+		flex-flow: column nowrap;
+		justify-content: center;
+
+		@include media-breakpoint-up(md) {
+			grid-column: span 6 / span 6;
+		}
+
+		&.align-left {
+			@include media-breakpoint-up(md) {
+				order: 2;
+			}
+
+			@include media-breakpoint-up(xl) {
+				grid-column-start: 7;
+			}
+		}
+
+		&.align-right {
+			@include media-breakpoint-up(md) {
+				order: 1;
+			}
+		}
+	}
 }
