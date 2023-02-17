@@ -1,5 +1,6 @@
 import 'lazysizes';
 import '@lottiefiles/lottie-player';
+import '@scripts/utils/faIcons';
 import domReady from '@roots/sage/client/dom-ready';
 import LottieInteractive from '@scripts/common/lottieInteractive';
 
@@ -7,7 +8,9 @@ import LottieInteractive from '@scripts/common/lottieInteractive';
  * Application entrypoint
  */
 domReady(async () => {
-	new LottieInteractive({selector: '[data-lottie-mode]'});
+	const lottie = new LottieInteractive({selector: '[data-lottie-mode]'});
+
+	lottie.init();
 });
 
 /**

@@ -20,16 +20,19 @@
   "prettier": "@clarifynl/prettier-config-clarify",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19",
-    "@clarifynl/eslint-config-clarify": "^0.0.9",
+    "@clarifynl/eslint-config-clarify": "^0.11",
     "@clarifynl/prettier-config-clarify": "^0.0.6",
     "@clarifynl/stylelint-config-clarify": "^0.0.9",
     "@roots/bud": "6.9.1",
     "@roots/bud-eslint": "6.9.1",
     "@roots/bud-sass": "6.9.1",
     "@roots/bud-stylelint": "6.9.1",
-    "@roots/sage": "6.9.1"
+    "@roots/sage": "6.9.1",
+    "glob": "^8.1.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "@fortawesome/free-brands-svg-icons": "^6.2.0",
     "@lottiefiles/lottie-interactivity": "^1.5",
     "@lottiefiles/lottie-player": "^1.5",
     "@popperjs/core": "^2.11.6",
