@@ -27,7 +27,7 @@ class Socials extends Partial
 					'icon_sets'       => [
 						0 => 'brands'
 					],
-					'save_format'     => 'class',
+					'save_format'     => 'object',
 					'allow_null'      => 0,
 					'show_preview'    => 0,
 					'enqueue_fa'      => 0
