@@ -1,11 +1,7 @@
 import path from 'path';
 import glob from 'glob';
 
-String.prototype.toKebabCase = function () {
-  return this.match(
-    /[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g
-  ).join('-');
-};
+const toKebabCase = string => string.match(/[A-Z]{2,}(?=[A-Z][a-z]+[0-9]*|\b)|[A-Z]?[a-z]+[0-9]*|[A-Z]|[0-9]+/g).join('-');
 
 /**
  * Get list of entrypoints for blocks
@@ -13,7 +9,7 @@ String.prototype.toKebabCase = function () {
 const blockFiles = {};
 
 glob.sync('app/Blocks/**/*.php').map(block => {
-  const name  = path.basename(block, '.php').toKebabCase().toLowerCase();
+  const name  = toKebabCase(path.basename(block, '.php')).toLowerCase();
   const files = glob.sync(`resources/views/blocks/${name}/*.{js,scss}`);
 
   if (files?.length > 0) {
@@ -21,6 +17,8 @@ glob.sync('app/Blocks/**/*.php').map(block => {
 
     blockFiles[name] = filesResult;
   }
+
+  return blockFiles;
 });
 
 /**
@@ -34,11 +32,23 @@ glob.sync('app/Blocks/**/*.php').map(block => {
  */
 export default async (app) => {
   /**
+   * Global sass imports
+   * @see {@link https://bud.js.org/extensions/bud-sass/}
+   */
+  app.sass.importGlobal([
+    '@src/styles/common/variables',
+    '~bootstrap/scss/bootstrap-utilities',
+    '@src/styles/common/mixins',
+    '@src/styles/common/global',
+  ])
+
+  /**
    * Application entrypoints
    * @see {@link https://bud.js.org/docs/bud.entry/}
    */
   app
     .alias('@blocks', app.path('@src/views/blocks'))
+    .provide({jquery: ['$', 'jQuery']})
     .entry({
       app: ['@scripts/app', '@styles/app'],
       editor: ['@scripts/editor', '@styles/editor'],
@@ -63,7 +73,7 @@ export default async (app) => {
      * Proxy origin (`WP_HOME`)
      * @see {@link https://bud.js.org/docs/bud.proxy/}
      */
-    .proxy('https://example.test')
+    .proxy('https://ona.test')
 
     /**
      * Development origin
@@ -75,7 +85,7 @@ export default async (app) => {
      * URI of the `public` directory
      * @see {@link https://bud.js.org/docs/bud.setPublicPath/}
      */
-    .setPublicPath('/app/themes/sage/public/')
+    .setPublicPath('/app/themes/sage-clarify-bs/public/')
 
     /**
      * Generate WordPress `theme.json`
