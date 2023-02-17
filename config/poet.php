@@ -101,5 +101,11 @@ return [
 				'author'
 			]
 		]
+	],
+
+	'block' => [
+		'sage/inner-blocks' => [
+			'view' => 'blocks.inner-blocks.inner-blocks'
+		]
 	]
 ];
