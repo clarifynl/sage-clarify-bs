@@ -65,7 +65,7 @@ class Admin
 	 */
 	public static function set_upload_mimes($mimes) {
 		$mimes['svg']  = 'image/svg+xml';
-		$mimes['json'] = 'application/json';
+		$mimes['json'] = 'text/plain';
 		$mimes['zip']  = 'application/zip';
 		$mimes['gzip'] = 'application/x-zip';
 		$mimes['rar']  = 'application/rar';
@@ -148,7 +148,7 @@ class Admin
 		bundle('admin')->enqueue();
 	}
 
-	/*
+	/**
 	 * Automatically wrap paragraphs in p tags
 	 */
 	public static function add_p_tags($init, $editor_id = '') {
@@ -157,5 +157,41 @@ class Admin
 		$init['tadv_noautop'] = true;
 
 		return $init;
+	}
+
+	/**
+	 * Fix Gravity forms merge tags error in form notifications due to acorn's laravel
+	 *
+	 * See: https://github.com/roots/acorn/issues/198
+	 */
+	public static function fix_acorn_gform_merge_tags() {
+		$isGravityFormsEditPage = isset($_GET['page']) && 'gf_edit_forms' === $_GET['page'];
+
+		if (!$isGravityFormsEditPage) {
+			return;
+		} ?>
+
+		<script type="text/javascript">
+			function MaybeAddSaveLinkMergeTag( mergeTags, elementId, hideAllFields, excludeFieldTypes, isPrepop, option ) {
+				const eventSelectEl = document.querySelector('select[name="_gform_setting_event"]');
+				if(!eventSelectEl) {
+					return mergeTags;
+				}
+
+				var event = eventSelectEl.value;
+				if (event === 'form_saved' || event === 'form_save_email_requested') {
+					mergeTags['other'].tags.push({
+						tag:  '{save_link}',
+						label: <?php echo json_encode(esc_html__('Save & Continue Link', 'gravityforms')); ?>
+					});
+					mergeTags['other'].tags.push({
+						tag:   '{save_token}',
+						label: <?php echo json_encode(esc_html__('Save & Continue Token', 'gravityforms')); ?>
+					});
+				}
+				return mergeTags;
+			}
+		</script>
+		<?php
 	}
 }
