@@ -4,11 +4,16 @@ class LottieInteractive
 {
 	constructor({selector} = {}) {
 		this.players = document.querySelectorAll(selector);
+	}
 
+	/**
+	 * Init class
+	 */
+	init() {
 		Array.from(this.players).forEach(player => {
 			const id     = player?.id;
-			const mode   = player?.dataset?.lottieMode;
-			const frames = parseInt(player?.dataset?.lottieFrames);
+			const mode   = player?.dataset?.lottieMode ?? 'scroll';
+			const frames = parseInt(player?.dataset?.lottieFrames, 10);
 			const type   = player?.dataset?.lottieType;
 
 			let scrollContainer   = '';
@@ -17,38 +22,39 @@ class LottieInteractive
 			let scrollLoop        = [];
 			let scrollVisibility  = [];
 
-			/* eslint-disable padding-line-between-statements */
 			if (mode === 'scroll') {
+				/* eslint-disable padding-line-between-statements */
 				switch (type) {
-				case 'container':
-					scrollContainer = player?.dataset?.lottieScrollContainer;
-					break;
+					case 'container':
+						scrollContainer = player?.dataset?.lottieScrollContainer;
+						break;
 
-				case 'offset':
-					scrollOffsetStart = parseFloat(player?.dataset?.lottieScrollOffsetStart) ?? 0;
-					scrollOffsetEnd   = parseFloat(player?.dataset?.lottieScrollOffsetEnd) ?? 1;
+					case 'offset':
+						scrollOffsetStart = parseFloat(player?.dataset?.lottieScrollOffsetStart) ?? 0;
+						scrollOffsetEnd   = parseFloat(player?.dataset?.lottieScrollOffsetEnd) ?? 1;
 
-					break;
+						break;
 
-				case 'loop':
-					scrollLoop = [
-						parseInt(player?.dataset?.lottieScrollLoopStart) ?? 0,
-						parseInt(player?.dataset?.lottieScrollLoopEnd) ?? frames
-					];
+					case 'loop':
+						scrollLoop = [
+							parseInt(player?.dataset?.lottieScrollLoopStart, 10) ?? 0,
+							parseInt(player?.dataset?.lottieScrollLoopEnd, 10) ?? frames
+						];
 
-					break;
+						break;
 
-				case 'play':
-				case 'playOnce':
-					scrollVisibility = [
-						parseFloat(player?.dataset?.lottieScrollVisibilityStart) ?? 0.5,
-						parseFloat(player?.dataset?.lottieScrollVisibilityEnd) ?? 1
-					];
+					case 'play':
+					case 'playOnce':
+					default:
+						scrollVisibility = [
+							parseFloat(player?.dataset?.lottieScrollVisibilityStart) ?? 0.5,
+							parseFloat(player?.dataset?.lottieScrollVisibilityEnd) ?? 1
+						];
 
-					break;
+						break;
 				}
+				/* eslint-enable padding-line-between-statements */
 			}
-			/* eslint-enable padding-line-between-statements */
 
 			this.initPlayer(id, mode, frames, type, {
 				scrollContainer,
@@ -63,18 +69,18 @@ class LottieInteractive
 	/**
 	 * Create Lottie player with config
 	 */
-	initPlayer(id, mode = 'scroll', frames, type = 'scroll', scrollOptions = {}) {
+	initPlayer(id, mode, frames, type = 'scroll', scrollOptions = {}) {
 		let config = {
 			mode,
 			player: `#${id}`
 		};
 
 		if (mode === 'cursor') {
-			const cursorConfig = this.getCursorConfig(frames, type);
+			const cursorConfig = this.constructor.getCursorConfig(frames, type);
 
 			config = {...config, ...cursorConfig};
 		} else if (mode === 'scroll') {
-			const scrollConfig = this.getScrollConfig(frames, type, scrollOptions);
+			const scrollConfig = this.constructor.getScrollConfig(frames, type, scrollOptions);
 
 			config = {...config, ...scrollConfig};
 		}
@@ -85,8 +91,8 @@ class LottieInteractive
 	/**
 	 * Construct Cursor Config
 	 */
-	getCursorConfig(frames, type = 'scroll') {
-		let config = {};
+	static getCursorConfig(frames, type = 'scroll') {
+		const config = {};
 
 		if (['hold', 'pauseHold', 'toggle'].includes(type)) {
 			config.actions = [{
@@ -133,8 +139,8 @@ class LottieInteractive
 	/**
 	 * Construct Scroll Config
 	 */
-	getScrollConfig(frames, type = 'scroll', scrollOptions = {}) {
-		let config = {};
+	static getScrollConfig(frames, type = 'scroll', scrollOptions = {}) {
+		const config = {};
 
 		if (['scroll', 'container'].includes(type)) {
 			config.actions = [{
