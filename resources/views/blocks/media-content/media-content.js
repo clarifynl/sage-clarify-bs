@@ -1,4 +1,4 @@
-(function(){
+($ => {
 	/**
 	 * initializeBlock
 	 *
@@ -13,21 +13,22 @@
 	 */
 
 	// Initialize each block
-	const initializeBlock = block => {
+	const initializeBlock = $block => {
 		// Do stuff
-		console.log(block);
+		console.log($block);
 	}
 
 	// Initialize each block on page load (front end).
 	$(document).ready(() => {
-		const blocks = document.getElementsByClassName('wp-block-media-text');
-		Array.from(blocks).forEach(block => {
-			initializeBlock(block);
+		const $blocks = $('.wp-block-media-content');
+
+		$blocks.each((i, el) => {
+			initializeBlock($(el));
 		});
 	});
 
 	// Initialize dynamic block preview (editor).
 	if (window.acf) {
-		window.acf.addAction('render_block_preview/type=media-text', initializeBlock);
+		window.acf.addAction('render_block_preview/type=media-content', initializeBlock);
 	}
-})();
+})(jQuery);

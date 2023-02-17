@@ -6,28 +6,28 @@ use StoutLogic\AcfBuilder\FieldsBuilder;
 use App\Fields\Partials\MediaTextBlock;
 use function Roots\bundle;
 
-class MediaText extends Block
+class MediaContent extends Block
 {
 	/**
 	 * The block name.
 	 *
 	 * @var string
 	 */
-	public $name = 'Media & Text';
+	public $name = 'Media & Content';
 
 	/**
 	 * The block name.
 	 *
 	 * @var string
 	 */
-	public $slug = 'media-text';
+	public $slug = 'media-content';
 
 	/**
 	 * The block view.
 	 *
 	 * @var string
 	 */
-	public $view = 'blocks.media-text.media-text';
+	public $view = 'blocks.media-content.media-content';
 
 	/**
 	 * The block description.
@@ -93,7 +93,7 @@ class MediaText extends Block
 	public function with()
 	{
 		return [
-			'media_text' => $this->media_text()
+			'media_content' => $this->media_content()
 		];
 	}
 
@@ -113,11 +113,11 @@ class MediaText extends Block
 	/**
 	 * Return the media_text fields
 	 */
-	public function media_text()
+	public function media_content()
 	{
-		$media_text = get_field('media_text') ?: [];
+		$media_content = get_field('media_text') ?: [];
 
-		return \App\arr_to_obj($media_text);
+		return \App\arr_to_obj($media_content);
 	}
 
 	/**
@@ -126,6 +126,6 @@ class MediaText extends Block
 	 * @return void
 	 */
 	public function enqueue() {
-		bundle('media-text')->enqueue();
+		bundle('media-content')->enqueue();
 	}
 }
