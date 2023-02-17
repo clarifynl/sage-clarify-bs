@@ -17,22 +17,67 @@ return [
 	*/
 
 	'defaults' => [
-		'country'         => ['wpml_cf_preferences' => 2, 'ui' => 1, 'return_format' => 'array'],
-		'flexibleContent' => ['wpml_cf_preferences' => 2],
-		'forms'           => ['wpml_cf_preferences' => 2, 'return_format' => 'id'],
-		'group'           => ['wpml_cf_preferences' => 2, 'layout' => 'table'],
-		'image'           => ['wpml_cf_preferences' => 2, 'return_format' => 'id'],
-		'link'            => ['wpml_cf_preferences' => 2],
-		'postObject'      => ['wpml_cf_preferences' => 2, 'ui' => 1, 'return_format' => 'id'],
-		'radio'           => ['wpml_cf_preferences' => 2, 'layout' => 'horizontal'],
-		'relationship'    => ['wpml_cf_preferences' => 2, 'return_format' => 'id'],
-		'repeater'        => ['wpml_cf_preferences' => 3, 'layout' => 'row'],
-		'select'          => ['wpml_cf_preferences' => 2, 'ui' => 1],
-		'tab'             => ['wpml_cf_preferences' => 2, 'placement' => 'top'],
-		'taxonomy'        => ['wpml_cf_preferences' => 2],
-		'text'            => ['wpml_cf_preferences' => 2],
-		'textarea'        => ['wpml_cf_preferences' => 2, 'new_lines' => 'br'],
-		'trueFalse'       => ['wpml_cf_preferences' => 2, 'ui' => 1],
-		'wysiwyg'         => ['wpml_cf_preferences' => 2, 'media_upload' => 0]
+		'wysiwyg' => [
+			'wpml_cf_preferences' => 2,
+			'media_upload'        => 0
+		],
+		'textarea' => [
+			'wpml_cf_preferences' => 2,
+			'new_lines' => 'br'
+		],
+		'image' => [
+			'wpml_cf_preferences' => 2,
+			'return_format'       => 'id'
+		],
+		'radio' => [
+			'wpml_cf_preferences' => 2,
+			'layout'              => 'horizontal'
+		],
+		'group' => [
+			'wpml_cf_preferences' => 2,
+			'layout'              => 'table'
+		],
+		'tab' => [
+			'wpml_cf_preferences' => 2,
+			'placement'           => 'top'
+		],
+		'repeater' => [
+			'wpml_cf_preferences' => 3,
+			'layout'              => 'row'
+		],
+		'trueFalse' => [
+			'ui'                  => 1,
+			'wpml_cf_preferences' => 2
+		],
+		'select' => [
+			'ui'                  => 1,
+			'wpml_cf_preferences' => 2
+		],
+		'postObject' => [
+			'ui'                  => 1,
+			'return_format'       => 'id',
+			'wpml_cf_preferences' => 2
+		],
+		'flexibleContent' => [
+			'wpml_cf_preferences' => 2
+		],
+		'taxonomy' => [
+			'wpml_cf_preferences' => 2
+		],
+		'text' => [
+			'wpml_cf_preferences' => 2
+		],
+		'link' => [
+			'wpml_cf_preferences' => 2,
+			'return_format'       => 'array'
+		],
+		'file' => [
+			'wpml_cf_preferences' => 2,
+			'return_format'       => 'array'
+		],
+		'forms'           => [
+			'return_format'       => 'id',
+			'wpml_cf_preferences' => 2
+		]
 	]
 ];
