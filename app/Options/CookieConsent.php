@@ -125,7 +125,7 @@ class CookieConsent extends Field
 						->addText('provider', [
 							'instructions'  => 'Add the provider off this cookie',
 							'required'      => 1,
-							'default_value' => '.' . $_SERVER['SERVER_NAME']
+							'default_value' => '.example.com'
 						])
 						->addText('expiration', [
 							'instructions'  => 'Enter the expiration time for this cookie',
