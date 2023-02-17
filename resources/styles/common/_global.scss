@@ -1,1 +1,18 @@
-// Add your global styles here
+%wp-block {
+	display: inline-flex;
+	flex-flow: column nowrap;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	margin: 0 0 4rem;
+}
+
+%wp-block-wrapper {
+	@include make-container();
+
+	max-width: map-get($container-max-widths, 'xxl');
+	display: grid;
+	grid-template-columns: repeat(12, minmax(0, 1fr));
+	gap: 2rem;
+	place-content: space-between;
+}

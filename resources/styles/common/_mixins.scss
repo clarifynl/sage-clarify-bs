@@ -3,16 +3,24 @@
 /*
  * For anti-aliasing light text on dark backgrounds
  */
-@mixin antialias_text($arguments: antialiased) {
+@mixin antialias-text($arguments: antialiased) {
 	-webkit-font-smoothing: $arguments;
 	-moz-font-smoothing: $arguments;
 	-ms-font-smoothing: $arguments;
 }
 
+@mixin make-container($padding-x: $container-padding-x) {
+	width: 100%;
+	padding-right: $padding-x;
+	padding-left: $padding-x;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 /*
  * Break element out of bootstrap container
  */
-@mixin break_out_container() {
+@mixin break-out-container() {
 	width: 100vw;
 	position: relative;
 	left: calc(-1 * (100vw - 100%) / 2);
@@ -28,7 +36,7 @@
 /**
  * For adding font icons to elements using CSS pseudo-elements
  */
-@mixin add_icon($position: before, $icon: false, $spin: false, $styles: true) {
+@mixin add-icon($position: before, $icon: false, $spin: false, $styles: true) {
 	@if $position == both {
 		$position: 'before, &:after';
 	}
@@ -64,7 +72,7 @@
 /**
  * Fancy underline text-decoration
  */
-@mixin add_text_underline($hover: false, $width: .09em, $link: $body-color, $line: $link-color) {
+@mixin add-text-underline($hover: false, $width: .09em, $link: $body-color, $line: $link-color) {
 	position: relative;
 	color: $link;
 	text-decoration: none;

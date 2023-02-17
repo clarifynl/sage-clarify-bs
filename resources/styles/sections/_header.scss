@@ -1,0 +1,45 @@
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: $header-height;
+	z-index: $zindex-fixed;
+
+	&__wrap {
+		display: flex;
+		flex-flow: row wrap;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__brand {
+		display: block;
+	}
+
+	&__logo {
+		width: 200px;
+		height: auto;
+	}
+
+	&__toggle {
+		display: flex;
+		cursor: pointer;
+
+		@include media-breakpoint-up(lg) {
+			display: none;
+		}
+	}
+
+	&__menu {
+		//
+	}
+
+	&__nav {
+		display: none;
+
+		@include media-breakpoint-up(lg) {
+			display: flex;
+		}
+	}
+}
