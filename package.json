@@ -20,7 +20,7 @@
   "prettier": "@clarifynl/prettier-config-clarify",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19",
-    "@clarifynl/eslint-config-clarify": "^0.0.7",
+    "@clarifynl/eslint-config-clarify": "^0.0.9",
     "@clarifynl/prettier-config-clarify": "^0.0.6",
     "@clarifynl/stylelint-config-clarify": "^0.0.9",
     "@roots/bud": "6.9.1",
