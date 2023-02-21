@@ -1,3 +1,25 @@
 .wp-block-front-header {
-	//
+	position: relative;
+
+	&__wrap {
+		@include make-grid(12, 1);
+	}
+
+	&__media {
+		z-index: 1;
+		grid-column: 1 / span 12;
+	}
+
+	&__title {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 2;
+		grid-column: 1 / span 12;
+
+		@include media-breakpoint-up(md) {
+			grid-column: 7 / span 6;
+		}
+	}
 }

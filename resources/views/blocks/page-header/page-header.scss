@@ -1,0 +1,28 @@
+.wp-block-page-header {
+	@include make-max-width-container();
+
+	&__wrap {
+		@include make-grid(12, 1);
+	}
+
+	&__title {
+		grid-column: 1 / span 12;
+
+		@include media-breakpoint-up(md) {
+			grid-column: 1 / span 4;
+		}
+	}
+
+	&__media {
+		grid-column: 1 / span 12;
+		margin: 0;
+
+		@include media-breakpoint-up(md) {
+			grid-column: 7 / span 6;
+		}
+	}
+
+	&__image {
+		max-width: 100%;
+	}
+}

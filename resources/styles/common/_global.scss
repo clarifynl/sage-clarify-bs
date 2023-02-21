@@ -7,7 +7,7 @@
 	margin: 0 0 4rem;
 }
 
-%wp-block-wrapper {
+%wp-block-wrap {
 	@include make-container();
 
 	max-width: map-get($container-max-widths, 'xxl');

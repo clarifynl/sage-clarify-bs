@@ -128,10 +128,12 @@ class FrontHeader extends Block
 	 */
 	public function hero()
 	{
-		return (object) [
+		$hero = [
 			'image_json' => get_field('hero_image_json') ?: get_post_thumbnail_id(),
 			'title'      => get_field('hero_title') ?: get_the_title()
 		];
+
+		return \App\arr_to_obj($hero);
 	}
 
 	/**
