@@ -1,6 +1,6 @@
 @isset ($media_content, $block)
 	<section class="{{ $block->classes }}">
-		<div class="{{ $block->classes }}__wrapper">
+		<div class="{{ $block->classes }}__wrap">
 			<figure
 				class="{{ $block->classes }}__media
 					align-{!! $media_content->align !!}

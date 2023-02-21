@@ -1,8 +1,8 @@
 .wp-block-media-content {
 	@extend %wp-block;
 
-	&__wrapper {
-		@extend %wp-block-wrapper;
+	&__wrap {
+		@extend %wp-block-wrap;
 	}
 
 	&__media {
