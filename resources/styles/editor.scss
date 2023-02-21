@@ -1,3 +1,139 @@
 .editor-styles-wrapper {
-	/* add */
+	@import 'common/index';
+
+	background-color: var(--#{$prefix}body-bg);
+
+	/**
+	 * ACF Block Fields
+	 */
+	[data-type^='acf/'] {
+		.acf-fields {
+			margin: 0 auto 2rem;
+			max-width: 100%;
+		}
+	}
+
+	/**
+	 * ACF Block Placeholders
+	 */
+	.acf-block-component {
+		.components-placeholder {
+			box-shadow: none;
+		}
+
+		.components-placeholder__fieldset {
+			justify-content: center;
+		}
+	}
+
+	/**
+	 * ACF Block Previews
+	 */
+	.acf-block-preview,
+	.block-editor-block-list__layout {
+		@include font-size(var(--#{$prefix}body-font-size));
+
+		margin: 0;
+		font-family: var(--#{$prefix}body-font-family);
+		font-weight: var(--#{$prefix}body-font-weight);
+		line-height: var(--#{$prefix}body-line-height);
+		color: var(--#{$prefix}body-color);
+		text-align: var(--#{$prefix}body-text-align);
+	}
+
+	/**
+	 * WP Core Blocks
+	 */
+	.wp-block {
+		&.wp-block-post-title {
+			// @apply
+			// 	px-6
+			// 	my-6
+			// 	mx-auto
+			// 	max-w-max
+			// 	font-sans
+			// 	text-2xl
+			// 	opacity-50
+			// 	focus:opacity-100;
+		}
+
+		&.wp-block-heading,
+		&.wp-block-paragraph,
+		&.wp-block-image,
+		&.wp-block-embed,
+		&.wp-block-quote,
+		&.wp-block-video,
+		&[data-type='gravityforms/form'] {
+			//
+
+			@apply
+				px-6
+				mx-auto
+				max-w-content;
+		}
+
+		&.wp-block-group {
+			//
+
+			@apply
+				mb-12
+				mx-auto
+				px-6
+				max-w-[795px];
+
+			.wp-block-heading,
+			.wp-block-paragraph,
+			.wp-block-image,
+			.wp-block-embed,
+			.wp-block-video,
+			[data-type='gravityforms/form'] {
+				margin: 0;
+				padding: 0;
+				max-width: 100%;
+			}
+		}
+
+		&.wp-block-image,
+		&.wp-block-embed,
+		&.wp-block-video,
+		&[data-type='gravityforms/form'] {
+			margin: 0 0 2rem;
+		}
+
+		&.wp-block-quote {
+			//
+
+			[role='textbox'] {
+				//
+			}
+		}
+
+		&.wp-block-heading {
+			//
+		}
+
+		h1.wp-block-heading {
+			//
+		}
+
+		h2.wp-block-heading {
+			//
+		}
+
+		h3.wp-block-heading {
+			//
+		}
+
+		h4.wp-block-heading {
+			//
+		}
+
+		h5.wp-block-heading {
+			//
+		}
+
+		h6.wp-block-heading {
+			//
+		}
+	}
 }
