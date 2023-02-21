@@ -1,6 +1,8 @@
+@use 'sass:map';
+
 @import '~bootstrap/scss/vendor/rfs';
 
-/*
+/**
  * For anti-aliasing light text on dark backgrounds
  */
 @mixin antialias-text($arguments: antialiased) {
@@ -9,12 +11,28 @@
 	-ms-font-smoothing: $arguments;
 }
 
-@mixin make-container($padding-x: $container-padding-x) {
-	width: 100%;
-	padding-right: $padding-x;
-	padding-left: $padding-x;
-	margin-right: auto;
-	margin-left: auto;
+/**
+ * Custom Grid Mixins
+ */
+@mixin make-max-width-container($max-widths: $container-max-widths, $breakpoints: $grid-breakpoints) {
+	@include make-container();
+
+	@each $breakpoint in map.keys($breakpoints) {
+		$max-width: map.get($max-widths, $breakpoint);
+
+		@if ($max-width) {
+			@include media-breakpoint-up($breakpoint, $breakpoints) {
+				max-width: $max-width;
+			}
+		}
+	}
+}
+
+@mixin make-grid($columns: $grid-columns, $rows: $grid-row-columns, $gap: $grid-gutter-width) {
+	display: grid;
+	grid-template-columns: repeat($columns, minmax(0, 1fr));
+	grid-template-rows: repeat($rows, minmax(0, 1fr));
+	gap: $gap;
 }
 
 /*
@@ -43,7 +61,7 @@
 
 	&:#{$position} {
 		@if $icon {
-			$code: map-get($icons, $icon);
+			$code: map.get($icons, $icon);
 
 			content: unquote('\'\\#{ $code }\'');
 		}
