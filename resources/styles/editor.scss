@@ -45,16 +45,53 @@
 	 * WP Core Blocks
 	 */
 	.wp-block {
+		&.wp-block-post-title,
+		&.wp-block-heading {
+			margin-top: 0;
+			margin-bottom: $headings-margin-bottom;
+			font-family: $headings-font-family;
+			font-style: $headings-font-style;
+			font-weight: $headings-font-weight;
+			line-height: $headings-line-height;
+			color: var(--#{$prefix}heading-color, inherit);
+		}
+
 		&.wp-block-post-title {
-			// @apply
-			// 	px-6
-			// 	my-6
-			// 	mx-auto
-			// 	max-w-max
-			// 	font-sans
-			// 	text-2xl
-			// 	opacity-50
-			// 	focus:opacity-100;
+			opacity: .5;
+
+			&:focus {
+				opacity: 1;
+			}
+		}
+
+		&.wp-block-post-title,
+		h1.wp-block-heading {
+			@include font-size($h1-font-size);
+		}
+
+		h2.wp-block-heading {
+			@include font-size($h2-font-size);
+		}
+
+		h3.wp-block-heading {
+			@include font-size($h3-font-size);
+		}
+
+		h4.wp-block-heading {
+			@include font-size($h4-font-size);
+		}
+
+		h5.wp-block-heading {
+			@include font-size($h5-font-size);
+		}
+
+		h6.wp-block-heading {
+			@include font-size($h6-font-size);
+		}
+
+		&.wp-block-paragraph {
+			margin-top: 0;
+			margin-bottom: $paragraph-margin-bottom;
 		}
 
 		&.wp-block-heading,
@@ -106,34 +143,6 @@
 			[role='textbox'] {
 				//
 			}
-		}
-
-		&.wp-block-heading {
-			//
-		}
-
-		h1.wp-block-heading {
-			//
-		}
-
-		h2.wp-block-heading {
-			//
-		}
-
-		h3.wp-block-heading {
-			//
-		}
-
-		h4.wp-block-heading {
-			//
-		}
-
-		h5.wp-block-heading {
-			//
-		}
-
-		h6.wp-block-heading {
-			//
 		}
 	}
 }
