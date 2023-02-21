@@ -20,14 +20,15 @@
   "prettier": "@clarifynl/prettier-config-clarify",
   "devDependencies": {
     "@babel/eslint-parser": "^7.19",
-    "@clarifynl/eslint-config-clarify": "^0.11",
+    "@clarifynl/eslint-config-clarify": "^0.12",
     "@clarifynl/prettier-config-clarify": "^0.0.6",
-    "@clarifynl/stylelint-config-clarify": "^0.0.9",
+    "@clarifynl/stylelint-config-clarify": "^0.11",
     "@roots/bud": "6.9.1",
     "@roots/bud-eslint": "6.9.1",
     "@roots/bud-sass": "6.9.1",
     "@roots/bud-stylelint": "6.9.1",
     "@roots/sage": "6.9.1",
+    "@wordpress/eslint-plugin": "^14.0.0",
     "glob": "^8.1.0"
   },
   "dependencies": {
