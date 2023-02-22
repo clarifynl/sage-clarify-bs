@@ -2167,10 +2167,10 @@
   resolved "https://registry.yarnpkg.com/@clarifynl/prettier-config-clarify/-/prettier-config-clarify-0.0.6.tgz#c4bb991ff719474412b3f13aa52ae142e5b00821"
   integrity sha512-Hh3Eip/rvdVSW9Ngw+beIvLzf29P13gk9NTlaOUcqWRUIVpfuEbyXbMY72/qFYtuDClSCkHgDAPaJ+6pkw+lDw==
 
-"@clarifynl/stylelint-config-clarify@^0.11":
-  version "0.11.0"
-  resolved "https://registry.yarnpkg.com/@clarifynl/stylelint-config-clarify/-/stylelint-config-clarify-0.11.0.tgz#7c1d11bb03c63cab2593990197f61552ccc9a149"
-  integrity sha512-Nt2k45hQfEQ0Tc4vOrP5va5cgbTcI+iQGnBCIB2DhjO387LOD1Xyt4PNUE3yFAQXl9TEd4Laayni0+WwuwpkAQ==
+"@clarifynl/stylelint-config-clarify@^0.12":
+  version "0.12.0"
+  resolved "https://registry.yarnpkg.com/@clarifynl/stylelint-config-clarify/-/stylelint-config-clarify-0.12.0.tgz#66b9166aed438e78ba4497b66c4c77bb8ece68f3"
+  integrity sha512-0p5NoA3nI8nr3CrrNvPPFHxY1pnB6mCiMXW1Sm9S3mAnbEWxsZODQxBrVvPh9gtxeA0JBJUEJvv0dKzUalzRNg==
   dependencies:
     stylelint-config-recommended "^10.0"
     stylelint-selector-bem-pattern "^2.1"
@@ -3966,12 +3966,7 @@ caniuse-api@^3.0.0:
     lodash.memoize "^4.1.2"
     lodash.uniq "^4.5.0"
 
-caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001426, caniuse-lite@^1.0.30001449:
-  version "1.0.30001457"
-  resolved "https://registry.npmjs.org/caniuse-lite/-/caniuse-lite-1.0.30001457.tgz"
-  integrity sha512-SDIV6bgE1aVbK6XyxdURbUE89zY7+k1BBBaOwYwkNCglXlel/E7mELiHC64HQ+W0xSKlqWhV9Wh7iHxUjMs4fA==
-
-caniuse-lite@^1.0.30001457:
+caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001400, caniuse-lite@^1.0.30001426, caniuse-lite@^1.0.30001449, caniuse-lite@^1.0.30001457:
   version "1.0.30001457"
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001457.tgz#6af34bb5d720074e2099432aa522c21555a18301"
   integrity sha512-SDIV6bgE1aVbK6XyxdURbUE89zY7+k1BBBaOwYwkNCglXlel/E7mELiHC64HQ+W0xSKlqWhV9Wh7iHxUjMs4fA==
