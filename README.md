@@ -75,7 +75,13 @@ To install the latest development version of Sage, add `dev-main` to the end of 
 $ composer create-project clarifynl/sage-clarify-bs your-theme-name dev-main
 ```
 
-Make sure that you have [Acorn installed](https://docs.roots.io/acorn/2.x/installation/).
+Make sure that you have [Acorn installed](https://roots.io/acorn/docs/installation/).
+After activating your new sage based theme, setup Acorn's traditional structure and publish acorn vendor files:
+
+```bash
+# @ app/theme/your-theme or wp-content/themes/your-theme
+$ wp @development acorn acorn:init storage && wp @development acorn vendor:publish --tag=acorn
+```
 
 ## Theme structure
 
