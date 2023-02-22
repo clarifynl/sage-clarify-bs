@@ -1,8 +1,135 @@
-// Custom variables
-$header-height:               100px;
+// Custom Dimensions
+$header-height: 100px;
 
-// Bootstrap overrides
-$headings-font-family:        'Inter', sans-serif;
-$headings-font-style:         normal;
-$headings-font-weight:        500;
-$headings-line-height:        1.2;
+// Color system
+// $blue:            #0d6efd;
+// $indigo:          #6610f2;
+// $purple:          #6f42c1;
+// $pink:            #d63384;
+// $red:             #dc3545;
+// $orange:          #fd7e14;
+// $yellow:          #ffc107;
+// $green:           #198754;
+// $teal:            #20c997;
+// $cyan:            #0dcaf0;
+
+// $primary:         $blue;
+// $secondary:       $gray-600;
+// $success:         $green;
+// $info:            $cyan;
+// $warning:         $yellow;
+// $danger:          $red;
+// $light:           $gray-100;
+// $dark:            $gray-900;
+
+// $theme-colors: (
+// 	"primary":    $primary,
+// 	"secondary":  $secondary,
+// 	"success":    $success,
+// 	"info":       $info,
+// 	"warning":    $warning,
+// 	"danger":     $danger,
+// 	"light":      $light,
+// 	"dark":       $dark
+// );
+
+// Body
+// $body-color:      $gray-900;
+// $body-bg:         $white;
+
+// Links
+// $link-color:            $primary;
+// $link-shade-percentage: 20%;
+// $link-hover-color:      shift-color($link-color, $link-shade-percentage);
+
+// Grid breakpoints
+// $grid-breakpoints: (
+// 	xs: 0,
+// 	sm: 576px,
+// 	md: 768px,
+// 	lg: 992px,
+// 	xl: 1200px,
+// 	xxl: 1400px
+// );
+
+// Grid containers
+// $container-max-widths: (
+// 	sm: 540px,
+// 	md: 720px,
+// 	lg: 960px,
+// 	xl: 1140px,
+// 	xxl: 1320px
+// );
+
+// Typography
+$font-family-sans-serif:        'Inter', sans-serif;
+
+// $font-size-root:              null;
+// $font-size-base:              1rem;
+// $font-size-sm:                $font-size-base * .875;
+// $font-size-lg:                $font-size-base * 1.25;
+
+// $line-height-base:            1.5;
+// $line-height-sm:              1.25;
+// $line-height-lg:              2;
+
+// $h1-font-size:                $font-size-base * 2.5;
+// $h2-font-size:                $font-size-base * 2;
+// $h3-font-size:                $font-size-base * 1.75;
+// $h4-font-size:                $font-size-base * 1.5;
+// $h5-font-size:                $font-size-base * 1.25;
+// $h6-font-size:                $font-size-base;
+
+// $font-sizes: (
+// 	1: $h1-font-size,
+// 	2: $h2-font-size,
+// 	3: $h3-font-size,
+// 	4: $h4-font-size,
+// 	5: $h5-font-size,
+// 	6: $h6-font-size
+// );
+
+// $headings-margin-bottom:       $spacer * .5;
+$headings-font-family:         'IBM Plex Serif', serif;
+$headings-font-weight:         600;
+$headings-line-height:         1.2;
+
+// Navs
+// $nav-link-padding-y:           .5rem;
+// $nav-link-padding-x:           1rem;
+// $nav-link-font-size:           null;
+// $nav-link-font-weight:         null;
+// $nav-link-color:               var(--#{$prefix}link-color);
+// $nav-link-hover-color:         var(--#{$prefix}link-hover-color);
+// $nav-link-transition:          color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out;
+// $nav-link-disabled-color:      var(--#{$prefix}secondary-color);
+
+// Dropdowns
+// $dropdown-min-width:                10rem;
+// $dropdown-padding-x:                0;
+// $dropdown-padding-y:                .5rem;
+// $dropdown-spacer:                   .125rem;
+// $dropdown-font-size:                $font-size-base;
+// $dropdown-color:                    var(--#{$prefix}body-color);
+// $dropdown-bg:                       var(--#{$prefix}body-bg);
+// $dropdown-border-color:             var(--#{$prefix}border-color-translucent);
+// $dropdown-border-radius:            $border-radius;
+// $dropdown-border-width:             var(--#{$prefix}border-width);
+// $dropdown-inner-border-radius:      calc($dropdown-border-radius - $dropdown-border-width);
+// $dropdown-divider-bg:               $dropdown-border-color;
+// $dropdown-divider-margin-y:         $spacer * .5;
+// $dropdown-box-shadow:               $box-shadow;
+
+// $dropdown-link-color:               var(--#{$prefix}body-color);
+// $dropdown-link-hover-color:         $dropdown-link-color;
+// $dropdown-link-hover-bg:            var(--#{$prefix}tertiary-bg);
+// $dropdown-link-active-color:        $component-active-color;
+// $dropdown-link-active-bg:           $component-active-bg;
+// $dropdown-link-disabled-color:      $gray-500;
+
+// $dropdown-item-padding-y:           $spacer * .25;
+// $dropdown-item-padding-x:           $spacer;
+
+// $dropdown-header-color:             $gray-600;
+// $dropdown-header-padding-x:         $dropdown-item-padding-x;
+// $dropdown-header-padding-y:         $dropdown-padding-y;
