@@ -1,3 +1,12 @@
 .wp-block-sage-inner-blocks {
-	/* Add core blocks styles */
+	.wp-block-image,
+	.wp-block-embed {
+		img,
+		iframe,
+		object,
+		figure, {
+			max-width: 100%;
+			height: auto;
+		}
+	}
 }

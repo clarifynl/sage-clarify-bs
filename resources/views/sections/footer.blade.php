@@ -12,6 +12,7 @@
 			@include('partials.navigation', [
 				'nav_menu' => 'service_menu'
 			])
+			<nav class="nav"><a class="nav-link js-cookie-settings" href="#cookies">{!! __('Cookie Settings', 'sage') !!}</a></nav>
 		</section>
 		<section class="footer__socials">
 			@include('partials.socials')

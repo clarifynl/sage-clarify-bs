@@ -9,13 +9,22 @@ import '@lottiefiles/lottie-player';
 import '@scripts/utils/faIcons';
 import domReady from '@roots/sage/client/dom-ready';
 import LottieInteractive from '@scripts/common/lottieInteractive';
+import CookieBar from '@scripts/sections/cookieBar';
 
 /**
  * Application entrypoint
  */
 domReady(async () => {
-	const lottie = new LottieInteractive({selector: '[data-lottie-mode]'});
+	const cookieBar = new CookieBar({
+		selector: '.js-cookie-bar',
+		link: '.js-cookie-settings'
+	});
 
+	const lottie = new LottieInteractive({
+		selector: '[data-lottie-mode]'
+	});
+
+	cookieBar.init();
 	lottie.init();
 });
 

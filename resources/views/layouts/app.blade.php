@@ -10,3 +10,4 @@
 	</aside>
 @endif
 @include('sections.footer')
+@include('sections.cookie-bar')
