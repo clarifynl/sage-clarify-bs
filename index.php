@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<?php echo app(Spatie\GoogleFonts\GoogleFonts::class)->load()->toHtml(); ?>
+		<?php echo app(Spatie\GoogleFonts\GoogleFonts::class)->load('serif')->toHtml(); ?>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>

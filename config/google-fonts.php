@@ -8,6 +8,7 @@ return [
      */
     'fonts' => [
         'default' => 'https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;1,400;1,700',
+        'serif'   => 'https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400;1,600&display=swap'
     ],
 
     /*
