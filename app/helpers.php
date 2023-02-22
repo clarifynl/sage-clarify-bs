@@ -170,7 +170,7 @@ function make_oembed_responsive($embed = null) {
 	$responsive = preg_replace('/(width|height)\s*?=\s*?".*?"/', '', $embed);
 	$responsive = str_replace('?feature=oembed', '', $responsive);
 
-	return '<div class="b-embed" style="padding-bottom:'. $padding .'%">' . $responsive . '</div>';
+	return '<div class="embed-responsive" style="padding-bottom:'. $padding .'%">' . $responsive . '</div>';
 }
 
 /*
@@ -199,64 +199,4 @@ function lazyload_oembed($embed = null) {
 	}
 
 	return $embed;
-}
-
-/*
- * Make oEmbed responsive and lazyloaded
- */
-function use_oembed_api($embed = null, $image = null) {
-	if (!$embed) {
-		return;
-	}
-
-	// Add extra parameters to src and replace HTML.
-	$embed = str_replace('?feature=oembed', '', $embed);
-	preg_match('/src="(.+?)"/', $embed, $sources);
-	if (array_key_exists(1, $sources)) {
-		$org_src = $sources[1];
-		$params  = [
-			'enablejsapi' => 1
-		];
-		$new_src = add_query_arg($params, $org_src);
-		$embed   = str_replace($org_src, $new_src, $embed);
-	}
-
-	// Get original dimensions
-	preg_match('/width="([0-9]+?)"/', $embed, $widths);
-	preg_match('/height="([0-9]+?)"/', $embed, $heights);
-
-	if (array_key_exists(1, $widths)) {
-		$org_width = $widths[1];
-	}
-
-	if (array_key_exists(1, $heights)) {
-		$org_height = $heights[1];
-	}
-
-	// Calculate ratio
-	if (isset($org_width) && strpos($org_width, '%') === false && isset($org_height)) {
-		$ratio = $org_height / $org_width;
-	} else {
-		$ratio = 9 / 16;
-	}
-
-	// Set ratio and remove dimensions
-	$padding    = round($ratio * 100, 2);
-	$responsive = preg_replace('/(width|height)\s*?=\s*?".*?"/', '', $embed);
-	$lazyload   = \App\lazyload_oembed($responsive);
-
-	$api_embed  = view('blocks/b-embed', [
-		'ratio' => $ratio,
-		'image' => $image,
-		'embed' => $lazyload
-	])->render();
-
-	return $api_embed;
-}
-
-/*
- * Use image placeholder for video embedding
- */
-function video_placeholder($html, $image) {
-	return \App\use_oembed_api($html, $image);
 }

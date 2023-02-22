@@ -1,12 +1,28 @@
+@use 'sass:math';
+
 .wp-block-sage-inner-blocks {
 	.wp-block-image,
 	.wp-block-embed {
-		img,
-		iframe,
-		object,
-		figure, {
-			max-width: 100%;
-			height: auto;
+		margin: 0 0 2rem;
+
+		.embed-responsive {
+			position: relative;
+			overflow: hidden;
+			display: inline-block;
+			width: 100%;
+			height: 0;
+			padding-bottom: math.percentage(math.div(9, 16));
+
+			img,
+			iframe,
+			object,
+			figure {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+			}
 		}
 	}
 }

@@ -44,7 +44,7 @@ class Admin
 	}
 
 	/**
-	 * Format oEmbed field value
+	 * Format embed block
 	 */
 	public static function format_oembed_value($html, $data, $url) {
 		$responsive = \App\make_oembed_responsive($html);

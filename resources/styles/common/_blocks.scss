@@ -1,1 +1,11 @@
 @import '@blocks/inner-blocks/inner-blocks';
+
+.wp-block-embed {
+	img,
+	iframe,
+	object,
+	figure {
+		max-width: 100%;
+		height: auto;
+	}
+}
