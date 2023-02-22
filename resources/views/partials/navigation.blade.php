@@ -1,24 +1,33 @@
 @if ($navigation)
 	<ul class="nav {!! $nav_class ?? '' !!}">
 		@foreach ($navigation as $item)
-			<li class="nav__item {{ $item->classes ?? '' }}">
-				<a
-					href="{{ $item->url }}"
-					class="nav__link{{ $item->children ? ' nav__toggle' : '' }}{{ $item->active ? ' active' : '' }}">
-					{!! $item->label !!}
-				</a>
+			<li class="nav-item {{ $item->classes ?? '' }}{{ $item->children ? ' dropdown' : '' }}">
 				@if ($item->children)
-					<ul class="nav__submenu">
+					<a
+						href="#"
+						data-bs-toggle="dropdown"
+						role="button"
+						aria-expanded="false"
+						class="nav-link dropdown-toggle">
+						{!! $item->label !!}
+					</a>
+					<ul class="dropdown-menu">
 						@foreach ($item->children as $child)
-							<li class="nav__subitem {{ $child->classes ?? '' }}">
+							<li class="nav-item {{ $child->classes ?? '' }}">
 								<a
 									href="{{ $child->url }}"
-									class="nav__sublink{{ $child->active ? ' active' : '' }}">
+									class="dropdown-item{{ $child->active ? ' active' : '' }}">
 									{!! $child->label !!}
 								</a>
 							</li>
 						@endforeach
 					</ul>
+				@else
+					<a
+						href="{{ $item->url }}"
+						class="nav-link{{ $item->active ? ' active' : '' }}">
+						{!! $item->label !!}
+					</a>
 				@endif
 			</li>
 		@endforeach
