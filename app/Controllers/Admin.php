@@ -125,6 +125,8 @@ class Admin
 	 */
 	public static function login_enqueue_scripts() {
 		bundle('login')->enqueue();
+		echo app(\Spatie\GoogleFonts\GoogleFonts::class)->load()->toHtml();
+		echo app(\Spatie\GoogleFonts\GoogleFonts::class)->load('serif')->toHtml();
 	}
 
 	/**
