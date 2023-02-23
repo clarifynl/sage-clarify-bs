@@ -2147,10 +2147,10 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
-"@clarifynl/eslint-config-clarify@^0.12":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@clarifynl/eslint-config-clarify/-/eslint-config-clarify-0.12.0.tgz#d98da226bc889ffa3dac0849dfc1e33472435227"
-  integrity sha512-sKnUnl8Ib4ZwHjG55DCHuCpUG+Ro5Fx9hNzabneWr1J/sNl2YR09SISKSibUAs1qGubX5nMQnysTeIz72nYu6Q==
+"@clarifynl/eslint-config-clarify@^0.13":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@clarifynl/eslint-config-clarify/-/eslint-config-clarify-0.13.0.tgz#eaac536fa2a88786b64edae1134b558a530a288e"
+  integrity sha512-B/+FyBrAm7ttdykplHrutb5csrkuHUKzdW2w574gVJwJn+L20VtKKWjqWcuae0Po8bIBa2U+lkdASnnt/4rDjw==
   dependencies:
     "@babel/eslint-parser" "^7.16.5"
     "@babel/preset-react" "^7.16.7"

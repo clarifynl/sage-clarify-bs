@@ -40,6 +40,7 @@ export default async (app) => {
     '~bootstrap/scss/bootstrap-utilities',
     '@src/styles/common/mixins',
     '@src/styles/common/global',
+    '@src/styles/common/blocks'
   ])
 
   /**
