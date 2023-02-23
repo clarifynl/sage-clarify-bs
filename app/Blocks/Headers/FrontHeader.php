@@ -128,9 +128,12 @@ class FrontHeader extends Block
 	 */
 	public function hero()
 	{
+		$status = get_post_status();
+		$title  = $status !== 'auto-draft' ? get_the_title() : null;
+
 		$hero = [
 			'image_json' => get_field('hero_image_json') ?: get_post_thumbnail_id(),
-			'title'      => get_field('hero_title') ?: get_the_title()
+			'title'      => get_field('hero_title') ?: $title
 		];
 
 		return \App\arr_to_obj($hero);

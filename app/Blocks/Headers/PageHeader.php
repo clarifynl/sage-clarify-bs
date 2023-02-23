@@ -91,8 +91,11 @@ class PageHeader extends Block
 	 */
 	public function with()
 	{
+		$status = get_post_status();
+		$title  = $status !== 'auto-draft' ? get_the_title() : null;
+
 		return [
-			'title' => get_field('title') ?: get_the_title(),
+			'title' => get_field('title') ?: $title,
 			'image' => get_field('image') ?: get_post_thumbnail_id()
 		];
 	}
