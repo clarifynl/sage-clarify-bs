@@ -74,7 +74,7 @@ export default async (app) => {
      * Proxy origin (`WP_HOME`)
      * @see {@link https://bud.js.org/docs/bud.proxy/}
      */
-    .proxy('https://ona.test')
+    .proxy('https://example.test')
 
     /**
      * Development origin
