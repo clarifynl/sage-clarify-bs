@@ -22,7 +22,7 @@
     "@babel/eslint-parser": "^7.19",
     "@clarifynl/eslint-config-clarify": "^0.13",
     "@clarifynl/prettier-config-clarify": "^0.0.6",
-    "@clarifynl/stylelint-config-clarify": "^0.12",
+    "@clarifynl/stylelint-config-clarify": "^0.13",
     "@roots/bud": "6.9.1",
     "@roots/bud-eslint": "6.9.1",
     "@roots/bud-sass": "6.9.1",
