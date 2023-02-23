@@ -1,0 +1,14 @@
+.socials {
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+
+	&__link {
+		color: $body-color;
+		text-decoration: none;
+
+		&:not(:last-child) {
+			margin-right: .5rem;
+		}
+	}
+}
