@@ -4,7 +4,7 @@
 			$image_json->image,
 			(isset($image_sizes) ? $image_sizes : 'xs-12, md-6'),
 			(isset($image_crop) ? $image_crop : null),
-			(isset($classes) ? $classes : 'max-w-full'),
+			(isset($classes) ? $classes : ''),
 			true
 		); !!}
 	@elseif ($use_json && $lottie->file)
@@ -46,5 +46,5 @@
 		/>
 	@endif
 @elseif ($block->preview)
-	<p class="text-highlight-600">{!! __('Select/upload an image/json','sage') !!}</p>
+	<p class="preview">{!! __('Select/upload an image/json','sage') !!}</p>
 @endif
