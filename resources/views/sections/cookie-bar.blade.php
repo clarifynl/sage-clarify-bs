@@ -1,5 +1,5 @@
 @if ($cookie_bar)
-	<section class="cookie-bar js-cookie-bar hide" data-cookie-expiration="{!! $cookie_bar->expiration !!}">
+	<section class="cookie-bar js-cookie-bar hidden" data-cookie-expiration="{!! $cookie_bar->expiration !!}">
 		<div class="cookie-bar__content js-consent-text">
 			@if ($cookie_bar->title)
 				<h5 class="cookie-bar__title">{!! $cookie_bar->title !!}</h5>
@@ -9,7 +9,7 @@
 			@endif
 		</div>
 		@if ($consent_types)
-			<ul class="cookie-bar__types js-consent-types hide">
+			<ul class="cookie-bar__types js-consent-types hidden">
 				@foreach ($consent_types as $type)
 					<li class="cookie-bar__type">
 						<x-forms.checkbox
@@ -26,7 +26,7 @@
 			</ul>
 		@endif
 		<div class="cookie-bar__actions">
-			<div class="cookie-bar__buttons hide js-consent-btns1">
+			<div class="cookie-bar__buttons hidden js-consent-btns1">
 				<button
 					class="btn btn-outline-primary js-consent-cancel"
 					type="button"

@@ -99,14 +99,14 @@ class Cookiebar
 	 */
 	openSettings(e) {
 		e.preventDefault();
-		this.btns1.classList.remove('hide');
-		this.btns2.classList.add('hide');
-		this.content.classList.add('hide');
-		this.types.classList.remove('hide');
-		this.cookiebar.classList.remove('hide');
+		this.btns1.classList.remove('hidden');
+		this.btns2.classList.add('hidden');
+		this.content.classList.add('hidden');
+		this.types.classList.remove('hidden');
+		this.cookiebar.classList.remove('hidden');
 
 		this.cancel.addEventListener('click', () => {
-			this.cookiebar.classList.add('hide');
+			this.cookiebar.classList.add('hidden');
 		});
 	}
 
@@ -116,16 +116,16 @@ class Cookiebar
 	toggleSettings(e) {
 		e.preventDefault();
 
-		if (this.types.classList.contains('hide')) {
-			this.btns1.classList.remove('hide');
-			this.btns2.classList.add('hide');
-			this.content.classList.add('hide');
-			this.types.classList.remove('hide');
+		if (this.types.classList.contains('hidden')) {
+			this.btns1.classList.remove('hidden');
+			this.btns2.classList.add('hidden');
+			this.content.classList.add('hidden');
+			this.types.classList.remove('hidden');
 		} else {
-			this.btns1.classList.add('hide');
-			this.btns2.classList.remove('hide');
-			this.content.classList.remove('hide');
-			this.types.classList.add('hide');
+			this.btns1.classList.add('hidden');
+			this.btns2.classList.remove('hidden');
+			this.content.classList.remove('hidden');
+			this.types.classList.add('hidden');
 		}
 	}
 
@@ -136,7 +136,7 @@ class Cookiebar
 		setCookie('cookie_consent', JSON.stringify(selection), this.expiration);
 		this.pushSettings(selection);
 		this.cookieValue = JSON.stringify(selection);
-		this.cookiebar.classList.add('hide');
+		this.cookiebar.classList.add('hidden');
 	}
 
 	/**
@@ -188,7 +188,7 @@ class Cookiebar
 		if (this.cookieValue) {
 			this.applyCookie();
 		} else {
-			this.cookiebar.classList.remove('hide');
+			this.cookiebar.classList.remove('hidden');
 		}
 	}
 }

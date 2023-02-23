@@ -4,8 +4,7 @@
 			@svg('images.logo-placeholder', 'header__logo')
 		</a>
 		<button class="header__toggle js-hamburger-button" type="button" aria-label="{!! __('Toggle navigation', 'sage') !!}">
-			<span class="header__menu"></span>
-			<span>{!! __('Menu', 'sage') !!}</span>
+			<span class="header__menu">{!! __('Menu', 'sage') !!}</span>
 		</button>
 		<div class="header__nav">
 			@include('partials.navigation')
