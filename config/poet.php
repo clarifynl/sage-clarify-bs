@@ -103,6 +103,40 @@ return [
 		]
 	],
 
+	/*
+	|--------------------------------------------------------------------------
+	| Taxonomies
+	|--------------------------------------------------------------------------
+	|
+	| Here you may specify the taxonomies to be registered by Poet using the
+	| Extended CPTs library. <https://github.com/johnbillion/extended-cpts>
+	|
+	*/
+
+	'taxonomy' => [],
+
+	/*
+	|--------------------------------------------------------------------------
+	| Blocks
+	|--------------------------------------------------------------------------
+	|
+	| Here you may specify the block types to be registered by Poet and
+	| rendered using Blade.
+	|
+	| Blocks are registered using the `namespace/label` defined when
+	| registering the block with the editor. If no namespace is provided,
+	| the current theme text domain will be used instead.
+	|
+	| Given the block `sage/accordion`, your block view would be located at:
+	|   ↪ `views/blocks/accordion.blade.php`
+	|
+	| Block views have the following variables available:
+	|   ↪ $data    – An object containing the block data.
+	|   ↪ $content – A string containing the InnerBlocks content.
+	|                Returns `null` when empty.
+	|
+	*/
+
 	'block' => [
 		'sage/inner-blocks' => [
 			'view' => 'blocks.inner-blocks.inner-blocks'
