@@ -2167,10 +2167,10 @@
   resolved "https://registry.yarnpkg.com/@clarifynl/prettier-config-clarify/-/prettier-config-clarify-0.0.6.tgz#c4bb991ff719474412b3f13aa52ae142e5b00821"
   integrity sha512-Hh3Eip/rvdVSW9Ngw+beIvLzf29P13gk9NTlaOUcqWRUIVpfuEbyXbMY72/qFYtuDClSCkHgDAPaJ+6pkw+lDw==
 
-"@clarifynl/stylelint-config-clarify@^0.12":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@clarifynl/stylelint-config-clarify/-/stylelint-config-clarify-0.12.0.tgz#66b9166aed438e78ba4497b66c4c77bb8ece68f3"
-  integrity sha512-0p5NoA3nI8nr3CrrNvPPFHxY1pnB6mCiMXW1Sm9S3mAnbEWxsZODQxBrVvPh9gtxeA0JBJUEJvv0dKzUalzRNg==
+"@clarifynl/stylelint-config-clarify@^0.14":
+  version "0.14.0"
+  resolved "https://registry.yarnpkg.com/@clarifynl/stylelint-config-clarify/-/stylelint-config-clarify-0.14.0.tgz#f9ce3151b9a8f244e467b0ef7ebb7fe08de2a3a3"
+  integrity sha512-WJORsIGXoOUmmUPbzX5qjkFk4uTvH4zxiTwdhumI+9ZG+fRpXXpctuY++LORRQHvoLtOXIkO85CODXweDQw5hg==
   dependencies:
     stylelint-config-recommended "^10.0"
     stylelint-selector-bem-pattern "^2.1"
