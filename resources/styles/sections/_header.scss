@@ -11,6 +11,7 @@
 		flex-flow: row wrap;
 		align-items: center;
 		justify-content: space-between;
+		padding: 0 $container-padding-x;
 	}
 
 	&__brand {
@@ -20,6 +21,12 @@
 	&__logo {
 		width: 200px;
 		height: auto;
+	}
+
+	&__nav {
+		@include media-breakpoint-up(lg) {
+			display: flex !important;
+		}
 	}
 
 	&__toggle {
@@ -32,14 +39,10 @@
 	}
 
 	&__menu {
-		//
+		@include visually-hidden;
 	}
 
-	&__nav {
-		display: none;
-
-		@include media-breakpoint-up(lg) {
-			display: flex;
-		}
+	&__icon {
+		//
 	}
 }
