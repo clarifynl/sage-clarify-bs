@@ -1,0 +1,97 @@
+// stylelint-disable string-quotes
+// FontFace
+@font-face {
+	font-family: icons;
+	src: url("~@fonts/icons/icons.woff2") format("woff2"),
+		url("~@fonts/icons/icons.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+// Base style
+.icon {
+	font-family: icons, fantasy;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-weight: normal;
+	font-style: normal;
+	speak: none;
+}
+
+// Icons
+.icon-arrow-down::before {
+	content: '\f101';
+}
+
+.icon-arrow-left::before {
+	content: '\f102';
+}
+
+.icon-arrow-right::before {
+	content: '\f103';
+}
+
+.icon-arrow-up::before {
+	content: '\f104';
+}
+
+.icon-chain::before {
+	content: '\f105';
+}
+
+.icon-checkmark::before {
+	content: '\f106';
+}
+
+.icon-chevron-down::before {
+	content: '\f107';
+}
+
+.icon-chevron-left::before {
+	content: '\f108';
+}
+
+.icon-chevron-right::before {
+	content: '\f109';
+}
+
+.icon-chevron-up::before {
+	content: '\f10a';
+}
+
+.icon-cross::before {
+	content: '\f10b';
+}
+
+.icon-share::before {
+	content: '\f10c';
+}
+
+.icon-star::before {
+	content: '\f10d';
+}
+
+.icon-tag::before {
+	content: '\f10e';
+}
+
+// Icons map
+$icons: (
+	arrow-down: 'f101',
+	arrow-left: 'f102',
+	arrow-right: 'f103',
+	arrow-up: 'f104',
+	chain: 'f105',
+	checkmark: 'f106',
+	chevron-down: 'f107',
+	chevron-left: 'f108',
+	chevron-right: 'f109',
+	chevron-up: 'f10a',
+	cross: 'f10b',
+	share: 'f10c',
+	star: 'f10d',
+	tag: 'f10e',
+);
+// stylelint-enable string-quotes
