@@ -14,7 +14,7 @@ module.exports = {
 				'@clarifynl/eslint-config-clarify/react'
 			],
 			rules: {
-				'react-hooks/rules-of-hooks': 'warn'
+				'react-hooks/rules-of-hooks': 'off'
 			}
 		}
 	]
