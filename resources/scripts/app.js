@@ -8,6 +8,7 @@ import 'lazysizes';
 import '@lottiefiles/lottie-player';
 
 import '@scripts/utils/faIcons';
+import '@scripts/utils/viewportHeight';
 import LottieInteractive from '@scripts/common/lottieInteractive';
 import CookieBar from '@scripts/sections/cookieBar';
 
