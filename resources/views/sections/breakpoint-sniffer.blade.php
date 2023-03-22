@@ -1,0 +1,1 @@
+<div class="breakpoint-sniffer js-breakpoint-sniffer"></div>

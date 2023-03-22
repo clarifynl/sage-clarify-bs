@@ -1,0 +1,18 @@
+/* stylelint-disable function-name-case */
+.breakpoint-sniffer {
+	&,
+	&::before,
+	&::after {
+		width: 0;
+		height: 0;
+		overflow: hidden;
+		visibility: hidden;
+	}
+
+	@include grid-breakpoints-content();
+
+	&::after {
+		content: sassToJs($grid-breakpoints);
+	}
+}
+/* stylelint-enable function-name-case */

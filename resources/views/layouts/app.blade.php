@@ -11,3 +11,4 @@
 @endif
 @include('sections.footer')
 @include('sections.cookie-bar')
+@include('sections.breakpoint-sniffer')
