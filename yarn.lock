@@ -8757,6 +8757,11 @@ sass-loader@^13.2.0:
     klona "^2.0.4"
     neo-async "^2.6.2"
 
+sass-to-js@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/sass-to-js/-/sass-to-js-2.0.0.tgz#92adf2f7a58076f9eabd4c2f6b5f56a3bff9be08"
+  integrity sha512-LQW4d54Pb57rUG2wM2k/EL/9xm9qyv8up67bkY6oyqSfZ52t0nYaMYH+VoGIudM2nBYAUclAs0kRYwopD9IZ1w==
+
 sass@^1.57.1:
   version "1.58.1"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.58.1.tgz#17ab0390076a50578ed0733f1cc45429e03405f6"
