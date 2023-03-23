@@ -44,6 +44,19 @@ class Admin
 	}
 
 	/**
+	 * Remove JQuery migrate
+	 */
+	public static function remove_jquery_migrate($scripts) {
+		if (isset($scripts->registered['jquery'])) {
+			$script = $scripts->registered['jquery'];
+
+			if ($script->deps) {
+				$script->deps = array_diff($script->deps, array('jquery-migrate'));
+			}
+		}
+	}
+
+	/**
 	 * Format embed block
 	 */
 	public static function format_oembed_value($html, $data, $url) {
