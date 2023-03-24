@@ -34,8 +34,9 @@ class Hooks
 	}
 
 	private function add_actions_frontend() {
+		add_action('wp_head',                                      ['App\Controllers\Admin',  'add_gtm_script']);
 		add_action('wp_head',                                      ['App\Controllers\Admin',  'add_gtag_script']);
-		add_action('wp_body_open',                                 ['App\Controllers\Admin',  'add_gtag_noscript'], 10, 0);
+		add_action('wp_body_open',                                 ['App\Controllers\Admin',  'add_gtm_noscript'], 10, 0);
 		add_action('login_enqueue_scripts',                        ['App\Controllers\Admin',  'login_enqueue_scripts'], 10, 0);
 		add_action('wp_default_scripts',                           ['App\Controllers\Admin',  'remove_jquery_migrate'], 10, 1);
 		add_action('wp_enqueue_scripts',                           ['App\Controllers\Admin',  'remove_block_library_styles'], 100, 0);

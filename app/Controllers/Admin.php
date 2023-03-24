@@ -94,7 +94,39 @@ class Admin
 	}
 
 	/**
-	 * Add Google Tag Manager G4 tag
+	 * Add Google Tag Manager
+	 */
+	public static function add_gtm_script() {
+		$GTM_ID = env('GTM_CONTAINER_ID') ?: null;
+
+		if ($GTM_ID) {
+			if ((!defined('WP_ENV') || \WP_ENV === 'production') &&
+				!current_user_can('manage_options')) { ?>
+				<script nonce="<?= wp_create_nonce(); ?>">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+					new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+					j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+					'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+					})(window,document,'script','dataLayer','<?= $GTM_ID; ?>');
+				</script>
+			<?php } else { ?>
+				<script nonce="<?= wp_create_nonce(); ?>">console.log('Google Tag Manager Container: <?= $GTM_ID; ?>');</script>
+			<?php }
+		}
+	}
+	/*
+	 * Add Google Tag Manager (noscript) in body
+	 */
+	public static function add_gtm_noscript() {
+		$GTM_ID = env('GTM_CONTAINER_ID') ?: null;
+
+		if ($GTM_ID && (!defined('WP_ENV') || \WP_ENV === 'production') &&
+			!current_user_can('manage_options')) {
+			echo '<noscript><iframe src="https://www.googletagmanager.com/ns.html?id='. $GTM_ID .'" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
+		}
+	}
+
+	/**
+	 * Add Google tag (GA4)
 	 */
 	public static function add_gtag_script() {
 		$gtag_id = isset($_SERVER['GTAG_ID']) ? $_SERVER['GTAG_ID'] : null;
@@ -110,17 +142,8 @@ class Admin
 					gtag('config', '<?= $gtag_id; ?>', {'anonymize_ip': true});
 				</script>
 			<?php } else { ?>
-				<script>console.log('Google Analytics: <?= $gtag_id; ?>');</script>
+				<script>console.log('Google Analytics Measurement ID: <?= $gtag_id; ?>');</script>
 			<?php }
-		}
-	}
-
-	/**
-	 * Add Google Tag Manager noscript tag directly after body
-	 */
-	public static function add_gtag_noscript() {
-		if (env('GTAG_ID') && (!defined('WP_ENV') || \WP_ENV === 'production') && !current_user_can('manage_options')) {
-			echo '<noscript><iframe sandbox src="https://www.googletagmanager.com/ns.html?id='. env('GTAG_ID') .'" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>';
 		}
 	}
 
