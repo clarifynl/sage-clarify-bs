@@ -28,7 +28,10 @@ function arr_to_obj($arr) {
 function get_theme_vars() {
 	return [
 		'ajax_nonce' => wp_create_nonce('wc_ajax_nonce'),
-		'ajax_url'   => apply_filters('the_permalink', admin_url('admin-ajax.php'))
+		'ajax_url'   => apply_filters('the_permalink', admin_url('admin-ajax.php')),
+		'gtm_id'     => env('GTM_CONTAINER_ID') ?: null,
+		'is_admin'   => current_user_can('manage_options') ?: false,
+		'wp_env'     => \WP_ENV ?: 'production'
 	];
 }
 
