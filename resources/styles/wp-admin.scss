@@ -1,14 +1,50 @@
+@import 'common/icons';
+
 body.wp-admin {
+	/**
+	 * Admin Bar
+	 */
 	#wpadminbar {
-		/* add */
+		font-family: $font-family-base;
+		background: $primary;
 
 		#wp-admin-bar-wp-logo {
-			/* add */
+			display: hidden;
 		}
 
 		#wp-admin-bar-site-name {
 			> .ab-item {
-				/* add */
+				position: relative;
+				display: block;
+				padding: 0;
+				margin: 0 .25rem;
+				width: 60px;
+				color: $light;
+				font-family: $font-family-base;
+				text-indent: -9999px;
+				overflow: hidden;
+				background: url('~@images/logo-placeholder.svg') center no-repeat;
+				background-size: 60px auto;
+
+				&::before {
+					display: hidden;
+				}
+			}
+		}
+	}
+
+	/**
+	 * Admin Menu
+	 */
+	#adminmenu {
+		li.menu-icon-generic {
+			div.wp-menu-image {
+				&.dashicons-admin-generic {
+					// @include add-icon('before', 'icon') {
+					// 	font-size: 1.25em;
+					// 	vertical-align: middle;
+					// }
+				}
 			}
 		}
 	}
