@@ -1,13 +1,119 @@
 .gform_wrapper {
-	.gform_heading {
-		//
-	}
+	&.gravity-theme {
+		color: $body-color;
 
-	.gform_title {
-		//
-	}
+		.gform_required_legend {
+			display: none;
+		}
 
-	.gform_description {
-		//
+		.gform_heading {
+			margin: 0 0 5rem;
+			text-align: center;
+		}
+
+		.gform_title {
+			@include font-size($h4-font-size);
+		}
+
+		.gform_description {
+			display: block;
+			margin-bottom: 1em;
+		}
+
+		.gform_fields {
+			grid-gap: 1.7rem calc(#{$grid-gutter-width} / 2);
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+
+		input[type='text'],
+		input[type='password'],
+		input[type='email'],
+		input[type='url'],
+		input[type='date'],
+		input[type='month'],
+		input[type='time'],
+		input[type='datetime'],
+		input[type='datetime-local'],
+		input[type='week'],
+		input[type='number'],
+		input[type='search'],
+		input[type='tel'],
+		input[type='color'],
+		textarea,
+		select {
+			font-size: $input-font-size;
+			padding: $input-padding-y $input-padding-x;
+		}
+
+		.gfield {
+			break-inside: avoid;
+		}
+
+		.gfield_label {
+			margin: 0 0 $form-label-margin-bottom;
+			font-size: $form-label-font-size;
+			font-weight: $font-weight-base;
+		}
+
+		.gfield_required {
+			color: $body-color;
+		}
+
+		.gform_hidden {
+			display: none;
+		}
+
+		.gform_footer {
+			display: flex;
+			justify-content: flex-start;
+		}
+
+		/**
+		 * Errors
+		 */
+		[aria-invalid='true'] + label,
+		label + [aria-invalid='true'],
+		.gfield_error legend,
+		.gfield_error label,
+		.gfield_error .gfield_repeater_cell label {
+			color: $body-color;
+		}
+
+		.gfield_error {
+			input,
+			textarea {
+				&:not([type='radio'], [type='checkbox'], [type='submit'], [type='button'], [type='image'], [type='file']) {
+					border-color: $danger;
+				}
+			}
+		}
+
+		.gform_validation_errors {
+			margin: 0 0 1rem;
+			padding: $input-padding-y $input-padding-x;
+			color: $light;
+			background: $danger;
+			font-size: $input-font-size;
+			border: none;
+			box-shadow: $input-box-shadow;
+			border-radius: $input-border-radius;
+
+			> h2.hide_summary {
+				color: inherit;
+				font-size: $input-font-size;
+			}
+		}
+
+		.gfield_validation_message,
+		.validation_message {
+			margin: .5rem 0 0;
+			padding: 0;
+			color: $danger;
+			font-size: $font-size-sm;
+			background: transparent;
+			border: none;
+		}
 	}
 }
