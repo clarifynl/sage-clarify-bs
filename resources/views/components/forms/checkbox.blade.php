@@ -1,8 +1,9 @@
 <div
 	class="form-check{!! $inline ? ' form-check-inline' : '' !!}">
 	<input
-		id="{!! $name !!}"
+		id="{!! $value !!}"
 		class="form-check-input"
+		name="{!! $name !!}"
 		type="checkbox"
 		value="{!! $value !!}"
 		{!! checked($checked) !!}
@@ -12,7 +13,7 @@
 		@endif
 	/>
 	<label
-		for="{!! $name !!}"
+		for="{!! $value !!}"
 		class="form-check-label">
 		{!! $label !!}
 	</label>
