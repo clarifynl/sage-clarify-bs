@@ -17,40 +17,45 @@ return [
 	*/
 
 	'defaults' => [
-		'wysiwyg' => [
-			'wpml_cf_preferences' => 2,
-			'media_upload'        => 0
+		'buttonGroup' => [
+			'wpml_cf_preferences' => 3
 		],
-		'textarea' => [
-			'wpml_cf_preferences' => 2,
-			'new_lines' => 'br'
-		],
-		'image' => [
-			'wpml_cf_preferences' => 2,
-			'return_format'       => 'id'
-		],
-		'radio' => [
-			'wpml_cf_preferences' => 2,
-			'layout'              => 'horizontal'
-		],
-		'group' => [
-			'wpml_cf_preferences' => 2,
-			'layout'              => 'table'
-		],
-		'tab' => [
-			'wpml_cf_preferences' => 2,
-			'placement'           => 'top'
-		],
-		'repeater' => [
-			'wpml_cf_preferences' => 3,
-			'layout'              => 'row'
-		],
-		'trueFalse' => [
+		'country' => [
 			'ui'                  => 1,
+			'return_format'       => 'array',
 			'wpml_cf_preferences' => 2
 		],
-		'select' => [
-			'ui'                  => 1,
+		'file' => [
+			'wpml_cf_preferences' => 2,
+			'return_format'       => 'array'
+		],
+		'flexibleContent' => [
+			'wpml_cf_preferences' => 3
+		],
+		'fontAwesome' => [
+			'enqueue_fa'          => 0,
+			'save_format'         => 'object',
+			'show_preview'        => 0,
+			'wpml_cf_preferences' => 3
+		],
+		'forms' => [
+			'return_format'       => 'id',
+			'wpml_cf_preferences' => 2
+		],
+		'gallery' => [
+			'return_format'       => 'id',
+			'wpml_cf_preferences' => 2
+		],
+		'group' => [
+			'layout'              => 'table',
+			'wpml_cf_preferences' => 3
+		],
+		'image' => [
+			'return_format'       => 'id',
+			'wpml_cf_preferences' => 2
+		],
+		'link' => [
+			'return_format'       => 'array',
 			'wpml_cf_preferences' => 2
 		],
 		'postObject' => [
@@ -58,8 +63,25 @@ return [
 			'return_format'       => 'id',
 			'wpml_cf_preferences' => 2
 		],
-		'flexibleContent' => [
+		'radio' => [
+			'layout'              => 'horizontal',
+			'wpml_cf_preferences' => 2,
+		],
+		'relationship' => [
+			'return_format'       => 'id',
 			'wpml_cf_preferences' => 2
+		],
+		'repeater' => [
+			'layout'              => 'row',
+			'wpml_cf_preferences' => 3
+		],
+		'select' => [
+			'ui'                  => 1,
+			'wpml_cf_preferences' => 2
+		],
+		'tab' => [
+			'placement'           => 'top',
+			'wpml_cf_preferences' => 3
 		],
 		'taxonomy' => [
 			'wpml_cf_preferences' => 2
@@ -67,16 +89,19 @@ return [
 		'text' => [
 			'wpml_cf_preferences' => 2
 		],
-		'link' => [
-			'wpml_cf_preferences' => 2,
-			'return_format'       => 'array'
+		'textarea' => [
+			'new_lines'           => 'br',
+			'wpml_cf_preferences' => 2
 		],
-		'file' => [
-			'wpml_cf_preferences' => 2,
-			'return_format'       => 'array'
+		'trueFalse' => [
+			'ui'                  => 1,
+			'wpml_cf_preferences' => 2
 		],
-		'forms'           => [
-			'return_format'       => 'id',
+		'url' => [
+			'wpml_cf_preferences' => 3
+		],
+		'wysiwyg' => [
+			'media_upload'        => 0,
 			'wpml_cf_preferences' => 2
 		]
 	]
